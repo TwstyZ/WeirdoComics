@@ -14,43 +14,48 @@
 
     <ul class="nav nav-tabs justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"><img src="https://www.aprendemas.com/mx/blog/images/2022/01/comic-1.jpg" alt="" width="30" height="24"></a>
+            <a class="nav-link active" aria-current="page" href="#"><img
+                    src="https://www.aprendemas.com/mx/blog/images/2022/01/comic-1.jpg" alt="" width="30"
+                    height="24"></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link "style="color:#FF0000;" href="{{route('c')}}">Consulta</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"style="color:#FF0000;" href="{{route("p")}}">Proveedores</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="color:#FF0000;" href="{{route('pe')}}">Pedidos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " style="color:#FF0000;" href="{{route('m')}}" >Mostrador</a>
-          <li class="nav-item">
+            <a class="nav-link "style="color:#FF0000;" href="{{ route('c') }}">Consulta</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"style="color:#FF0000;" href="{{ route('p') }}">Proveedores</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:#FF0000;" href="{{ route('pe') }}">Pedidos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " style="color:#FF0000;" href="{{ route('m') }}">Mostrador</a>
+        <li class="nav-item">
             <div class="row align-items-center">
-              <div class="dropdown">
-                <a class="btn btn-danger " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                  Alta
-                </a>
-              
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <li><a class="dropdown-item" href="{{route('ac')}}">Comic</a></li>
-                  <li><a class="dropdown-item" href="{{route('aa')}}">Articulo</a></li>
-                  <li><a class="dropdown-item" href="{{route('av')}}">Vendedor</a></li>
-                  <li><a class="dropdown-item" href="{{route('ap')}}">Proveedor</a></li>
-                </ul>
-              </div>
+                <div class="dropdown">
+                    <a class="btn btn-danger " href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Alta
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{ route('ac') }}">Comic</a></li>
+                        <li><a class="dropdown-item" href="{{ route('aa') }}">Articulo</a></li>
+                        <li><a class="dropdown-item" href="{{ route('av') }}">Vendedor</a></li>
+                        <li><a class="dropdown-item" href="{{ route('ap') }}">Proveedor</a></li>
+                    </ul>
+                </div>
             </div>
-          </li>
-      </ul>
+        </li>
+    </ul>
 
     <!--Contenido de la página-->
     @yield('contenidoMenu')
 
     <!--Pie de página -->
-    <div class="alert alert-danger pb-1  pt-2 text-center" role="alert">
-        Weirdo Comics 2022 Copyrigth ©
+
+    <div class="alert alert-danger mt-5 pt-5 pb-5" role="alert">
+        <strong>© 2022 WeirdoComics, Inc | </strong>
+        <?php echo date('d-m-y h:i:s'); ?>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
