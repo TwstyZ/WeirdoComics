@@ -16,7 +16,7 @@ use App\Http\Controllers\ControladorForms;
 */
 
 Route::get('/', function () {
-    return view('consulta');
+    return view('index');
 });
 Route:: controller(ControladorVistas::class)->group(
     function(){
