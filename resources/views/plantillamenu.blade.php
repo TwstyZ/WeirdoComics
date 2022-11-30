@@ -56,7 +56,7 @@
 
     <!--Pie de página -->
 
-    <div class="alert alert-danger" style="height: 45px; width: 100%"  role="alert">
+    <div class="alert alert-danger mt-5 pt-5 pb-5" role="alert">
         <strong>© 2022 WeirdoComics, Inc | </strong>
         <?php echo date('d-m-y h:i:s'); ?>
     </div>
