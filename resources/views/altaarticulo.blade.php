@@ -1,1 +1,0 @@
-  imageWidth: 250,
