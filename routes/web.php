@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ControladorVistas;
-use App\Http\Controllers\ControladorForms;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +16,8 @@ use App\Http\Controllers\ControladorForms;
 
 Route::get('/', function () {return view('home');});
 Route::get('main', function () {return view('home');})->name('home');
+Route::get('comic', function () {return view('comicIndex');});
+
 
 //item
 //Create
