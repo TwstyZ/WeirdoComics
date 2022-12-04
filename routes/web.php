@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('home');});
 Route::get('main', function () {return view('home');})->name('home');
-Route::get('comic', function () {return view('providerCreate');});
+Route::get('comic', function () {return view('comicIndex');});
 
 
 //item

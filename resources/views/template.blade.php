@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 
 </head>
 
@@ -21,18 +22,19 @@
 
     <nav class="navbar navbar-expand-lg" style="background-color:#033E8C">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" href="{{ route('home') }} ">Weirdo Comics</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
-                aria-label="Toggle navigation">
+                <a class="navbar-brand text-light" href="{{ route('home') }} ">Weirdo Comics</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <div style="margin-top:20%">
+                            <i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i>
+                        </div>
+                    </span>
+                </button>
 
-                <span class="navbar-toggler-icon">
-                    <div style="margin-top:20%">
-                        <i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i>
-                    </div>
-                </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ route('home') }}">Home</a>
@@ -87,9 +89,9 @@
 
 
     <!-- Remove the container if you want to extend the Footer to full width. -->
-    <div class="container bg-dark mw-100">
+    <div class="container mw-100" style="background-color:#033E8C">
         <!-- Footer -->
-        <footer class="text-center text-lg-start text-white" style="background-color:#033E8C">
+        <footer class="text-center text-lg-start text-white">
             <!-- Grid container -->
             <div class="container p-4">
                 <!-- Section: Links -->
