@@ -6,8 +6,14 @@
     Aqui va la barra de busqueda @Ulises rifate
 </div>
 
-<div class="d-flex justify-content-end"><a href="" class="btn btn-warning mt-1 mx-5 text-white p-2">Add Book</a></div>
+<div class="d-flex justify-content-end"><a href="" class="btn btn-warning mt-1 mx-5 text-white p-2">Add Comic</a></div>
     
+
+
+
+
+
+
 
     <div class="d-flex justify-content-center m-3 flex-wrap">
         {{-- @foreach ($selectBook as $consulta) --}}
@@ -19,8 +25,7 @@
                         poner una imagen de alerta, sino, poner la imagen del articulo --}}
 
                         {{-- La imagen del articulo será la que está en la BD por lo que se debe de imprimir --}}
-                    <img src=""
-                        alt="" width="40%">
+                    <img src="" alt="" width="40%">
                 </div>
                 <div class="card-body">
                     {{-- Aqui va el nombre del comic --}}
@@ -33,8 +38,6 @@
                     <li class="list-group-item"><b>Price sell:      </b></li>
                     <li class="list-group-item"><b>Price buy:       </b></li>
                     <li class="list-group-item"><b>Adimssion date:  </b></li>
-
-
                 </ul>
                 <div class="card-body">
                     {{-- <a href="{{ route('book.edit', $consulta->Id_book) }}" class="btn btn-dark">Edit</a> --}}
