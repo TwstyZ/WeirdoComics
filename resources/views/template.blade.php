@@ -1,5 +1,11 @@
 <html lang="en">
-
+{{-- 
+    #D9043D
+    #033E8C
+    #F2B705
+    #F28705
+    #D90404
+     --}}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +19,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg" style="background-color:#143F6B">
+    <nav class="navbar navbar-expand-lg" style="background-color:#033E8C">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="{{ route('home') }} ">Weirdo Comics</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -83,7 +89,7 @@
     <!-- Remove the container if you want to extend the Footer to full width. -->
     <div class="container bg-dark mw-100">
         <!-- Footer -->
-        <footer class="text-center text-lg-start text-white" style="background-color:#143F6B">
+        <footer class="text-center text-lg-start text-white" style="background-color:#033E8C">
             <!-- Grid container -->
             <div class="container p-4">
                 <!-- Section: Links -->
