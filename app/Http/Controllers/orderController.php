@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\orderRequest;
+use DB;
+use Carbon\Carbon;
 
 class orderController extends Controller
 {
@@ -23,8 +26,8 @@ class orderController extends Controller
      */
     public function create()
     {
-        $query = DB::table('provider')->get();
-        return view('orderSelect', compact('query'));
+        $query = DB::table('provider')->select('Id_provider', 'Name', 'Contact')->get();
+        return view('orderCreate', compact('query'));
     }
 
     /**
