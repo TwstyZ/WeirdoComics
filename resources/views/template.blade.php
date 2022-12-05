@@ -47,8 +47,8 @@
                         <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#416284"
                             aria-labelledby="navbarDarkDropdownMenuLink">
 
-                            <li><a class="dropdown-item" href="">Check</a></li>
-                            <li><a class="dropdown-item" href="">Register</a></li>
+                            <li><a class="dropdown-item" href="{{route('comic.index')}}">Check</a></li>
+                            <li><a class="dropdown-item" href="{{route('comic.create')}}">Register</a></li>
 
                         </ul>
                     </li>

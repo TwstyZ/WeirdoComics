@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('Item', function (Blueprint $table) {
             $table->increments('Id_item');
             $table->string('Name');
-            $table->string('Type');
+            $table->string('Type')->default('Comic');
             $table->integer('Edition')->nullable();
             $table->text('Description')->nullable();
             $table->string('Brand');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->double('Price_buy', 8, 4);
             $table->double('Price_sell', 8, 4)->nullable();
             $table->dateTime('Admission_date');
-            $table->string('Image', 500)->default('https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/7.3.0/png/iconmonstr-cube-lined.png&r=0&g=0&b=0');
+            $table->string('Image',500)->default('https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png');
             $table->timestamps();
         });
     }
