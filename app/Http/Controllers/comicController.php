@@ -58,9 +58,11 @@ class comicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(itemRequest $request)
     {
-        //
+        $Id=$request->input();
+        $comic=DB::table('item')->where('Id_item',$Id)->get();
+        return view('comicEdit',compact('comic'));
     }
 
     /**

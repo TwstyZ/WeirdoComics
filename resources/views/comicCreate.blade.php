@@ -79,7 +79,7 @@
                         <h5 class="mt-2">Image (Default Image Loaded)</h5>
                         <div class="form-group">
                             <input name="Image" class="form-control border-2" type="text" placeholder="Image" style="background-color: #e1eefe;" 
-                                value="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png">
+                                value="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2017/png/iconmonstr-book-28.png&r=0&g=0&b=0">
                             <p class='card-title fw-bold text-start' style="color:#D90404">
                                 <u>
                                     {{ $errors->first('Image') }}

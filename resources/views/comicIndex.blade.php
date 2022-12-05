@@ -4,7 +4,24 @@
 
 <div class="d-flex justify-content-center"><h1 class="mt-3" style="color: #033E8C">Comics</h1></div>
 <div class="d-flex justify-content-center">
-    Aqui va la barra de busqueda @Ulises rifate
+    <div class="row justify-content-center">
+        <div class="container">
+            <form method="POST" action="{{route('comic.show')}}"> 
+                @csrf
+            <div class="row">
+                <input class="form-control me-17" type="text" name="Id" placeholder="Search" list="datalistOptions">
+            </div>
+            <div class="row">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                <datalist id="datalistOptions">
+      @foreach ($selectBook as $consulta) 
+                  <option value="{{$consulta->Id_item}}">{{$consulta->Name}}</option>
+      @endforeach
+                </datalist>
+            </div>
+        </form>
+            </div>
+      </div>
 </div>
 
 <div class="d-flex justify-content-end"><a href="{{route("comic.create")}}" class="btn btn-warning mt-1 mx-5 text-white p-2">Add Comic</a></div>
@@ -24,9 +41,13 @@
                 <div class="d-flex justify-content-center px-2 py-3">
                     {{-- Esta imagen deberá estar en un if de la cantidad del articulo, si esta es 0
                         poner una imagen de alerta, sino, poner la imagen del articulo --}}
-
-                        {{-- La imagen del articulo será la que está en la BD por lo que se debe de imprimir --}}
+                    @if($consulta->Amount == '0')
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png" alt="" width="40%">
+                    @else
                     <img src="{{$consulta->Image}}" alt="" width="40%">
+                    @endif
+                        {{-- La imagen del articulo será la que está en la BD por lo que se debe de imprimir --}}
+                    
                 </div>
                 <div class="card-body">
                     {{$consulta->Name}}
@@ -37,7 +58,7 @@
                     <li class="list-group-item"><b>Company: {{$consulta->Brand}}        </b></li>
                     <li class="list-group-item"><b>Amount: {{$consulta->Amount}}          </b></li>
                     <li class="list-group-item"><b>Price sell:    </b></li>
-                    <li class="list-group-item"><b>Price buy:       </b></li>
+                    <li class="list-group-item"><b>Price buy: {{$consulta->Price_buy}}      </b></li>
                     <li class="list-group-item"><b>Adimssion date: {{$consulta->Admission_date}}  </b></li>
                 </ul>
                 <div class="card-body">
