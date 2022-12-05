@@ -3,6 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\comicController;
 
+=======
+use App\Http\Controllers\itemController;
+use App\Http\Controllers\orderController;
+use App\Http\Controllers\providerController;
+use App\Http\Controllers\saleController;
+use App\Http\Controllers\sellerController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,24 +24,24 @@ use App\Http\Controllers\comicController;
 
 Route::get('/', function () {return view('home');});
 Route::get('main', function () {return view('home');})->name('home');
-Route::get('comic', function () {return view('comicCreate');});
+Route::get('comic', function () {return view('orderCreate');});
 
 
 //item
 //Create
-Route::get('item/create', [controllerCustomer::class,'create'])->name('item.create');
+Route::get('item/create', [itemController::class,'create'])->name('item.create');
 //Store
-Route::post('item/store', [controllerCustomer::class,'store'])->name('item.store');
+Route::post('item/store', [itemController::class,'store'])->name('item.store');
 //Index
-Route::get('item/index', [controllerCustomer::class,'index'])->name('item.index');
+Route::get('item/index', [itemController::class,'index'])->name('item.index');
 //Edit
-Route::get('item/{id}/edit', [controllerCustomer::class,'edit'])->name('item.edit');
+Route::get('item/{id}/edit', [itemController::class,'edit'])->name('item.edit');
 //Update
-Route::put('item/{id}/update', [controllerCustomer::class,'update'])->name('item.update');
+Route::put('item/{id}/update', [itemController::class,'update'])->name('item.update');
 //Show
-Route::get('item/{id}/show', [controllerCustomer::class,'show'])->name('item.show');
+Route::get('item/{id}/show', [itemController::class,'show'])->name('item.show');
 //Destroy
-Route::delete('item/{id}/destroy', [controllerCustomer::class,'destroy'])->name('item.destroy');
+Route::delete('item/{id}/destroy', [itemController::class,'destroy'])->name('item.destroy');
 
 //comic
 //Create
@@ -53,66 +61,66 @@ Route::delete('comic/{id}/destroy', [comicController::class,'destroy'])->name('c
 
 //provider
 //Create
-Route::get('provider/create', [controllerCustomer::class,'create'])->name('provider.create');
+Route::get('provider/create', [providerController::class,'create'])->name('provider.create');
 //Store
-Route::post('provider/store', [controllerCustomer::class,'store'])->name('provider.store');
+Route::post('provider/store', [providerController::class,'store'])->name('provider.store');
 //Index
-Route::get('provider/index', [controllerCustomer::class,'index'])->name('provider.index');
+Route::get('provider/index', [providerController::class,'index'])->name('provider.index');
 //Edit
-Route::get('provider/{id}/edit', [controllerCustomer::class,'edit'])->name('provider.edit');
+Route::get('provider/{id}/edit', [providerController::class,'edit'])->name('provider.edit');
 //Update
-Route::put('provider/{id}/update', [controllerCustomer::class,'update'])->name('provider.update');
+Route::put('provider/{id}/update', [providerController::class,'update'])->name('provider.update');
 //Show
-Route::get('provider/{id}/show', [controllerCustomer::class,'show'])->name('provider.show');
+Route::get('provider/{id}/show', [providerController::class,'show'])->name('provider.show');
 //Destroy
-Route::delete('provider/{id}/destroy', [controllerCustomer::class,'destroy'])->name('provider.destroy');
+Route::delete('provider/{id}/destroy', [providerController::class,'destroy'])->name('provider.destroy');
 
 //sale
 //Create
-Route::get('sale/create', [controllerCustomer::class,'create'])->name('sale.create');
+Route::get('sale/create', [saleController::class,'create'])->name('sale.create');
 //Store
-Route::post('sale/store', [controllerCustomer::class,'store'])->name('sale.store');
+Route::post('sale/store', [saleController::class,'store'])->name('sale.store');
 //Index
-Route::get('sale/index', [controllerCustomer::class,'index'])->name('sale.index');
+Route::get('sale/index', [saleController::class,'index'])->name('sale.index');
 //Edit
-Route::get('sale/{id}/edit', [controllerCustomer::class,'edit'])->name('sale.edit');
+Route::get('sale/{id}/edit', [saleController::class,'edit'])->name('sale.edit');
 //Update
-Route::put('sale/{id}/update', [controllerCustomer::class,'update'])->name('sale.update');
+Route::put('sale/{id}/update', [saleController::class,'update'])->name('sale.update');
 //Show
-Route::get('sale/{id}/show', [controllerCustomer::class,'show'])->name('sale.show');
+Route::get('sale/{id}/show', [saleController::class,'show'])->name('sale.show');
 //Destroy
-Route::delete('sale/{id}/destroy', [controllerCustomer::class,'destroy'])->name('sale.destroy');
+Route::delete('sale/{id}/destroy', [saleController::class,'destroy'])->name('sale.destroy');
 
 //order
 //Create
-Route::get('order/create', [controllerCustomer::class,'create'])->name('order.create');
+Route::get('order/create', [orderController::class,'create'])->name('order.create');
 //Store
-Route::post('order/store', [controllerCustomer::class,'store'])->name('order.store');
+Route::post('order/store', [orderController::class,'store'])->name('order.store');
 //Index
-Route::get('order/index', [controllerCustomer::class,'index'])->name('order.index');
+Route::get('order/index', [orderController::class,'index'])->name('order.index');
 //Edit
-Route::get('order/{id}/edit', [controllerCustomer::class,'edit'])->name('order.edit');
+Route::get('order/{id}/edit', [orderController::class,'edit'])->name('order.edit');
 //Update
-Route::put('order/{id}/update', [controllerCustomer::class,'update'])->name('order.update');
+Route::put('order/{id}/update', [orderController::class,'update'])->name('order.update');
 //Show
-Route::get('order/{id}/show', [controllerCustomer::class,'show'])->name('order.show');
+Route::get('order/{id}/show', [orderController::class,'show'])->name('order.show');
 //Destroy
-Route::delete('order/{id}/destroy', [controllerCustomer::class,'destroy'])->name('order.destroy');
+Route::delete('order/{id}/destroy', [orderController::class,'destroy'])->name('order.destroy');
 
 //seller
 //Create
-Route::get('seller/create', [controllerCustomer::class,'create'])->name('seller.create');
+Route::get('seller/create', [sellerController::class,'create'])->name('seller.create');
 //Store
-Route::post('seller/store', [controllerCustomer::class,'store'])->name('seller.store');
+Route::post('seller/store', [sellerController::class,'store'])->name('seller.store');
 //Index
-Route::get('seller/index', [controllerCustomer::class,'index'])->name('seller.index');
+Route::get('seller/index', [sellerController::class,'index'])->name('seller.index');
 //Edit
-Route::get('seller/{id}/edit', [controllerCustomer::class,'edit'])->name('seller.edit');
+Route::get('seller/{id}/edit', [sellerController::class,'edit'])->name('seller.edit');
 //Update
-Route::put('seller/{id}/update', [controllerCustomer::class,'update'])->name('seller.update');
+Route::put('seller/{id}/update', [sellerController::class,'update'])->name('seller.update');
 //Show
-Route::get('seller/{id}/show', [controllerCustomer::class,'show'])->name('seller.show');
+Route::get('seller/{id}/show', [sellerController::class,'show'])->name('seller.show');
 //Destroy
-Route::delete('seller/{id}/destroy', [controllerCustomer::class,'destroy'])->name('seller.destroy');
+Route::delete('seller/{id}/destroy', [sellerController::class,'destroy'])->name('seller.destroy');
 
 

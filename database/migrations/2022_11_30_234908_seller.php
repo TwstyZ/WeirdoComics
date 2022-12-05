@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('Id_seller');
             $table->string('Name');
             $table->string('Address');
-            $table->integer('Cellphone');
-            $table->integer('Telephone');
+            $table->bigInteger('Cellphone');
+            $table->bigInteger('Telephone');
             $table->string('Email');
             $table->string('Type', 10);
             $table->timestamps();
