@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\comicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,19 +37,19 @@ Route::delete('item/{id}/destroy', [controllerCustomer::class,'destroy'])->name(
 
 //comic
 //Create
-Route::get('comic/create', [controllerCustomer::class,'create'])->name('comic.create');
+Route::get('comic/create', [comicController::class,'create'])->name('comic.create');
 //Store
-Route::post('comic/store', [controllerCustomer::class,'store'])->name('comic.store');
+Route::post('comic/store', [comicController::class,'store'])->name('comic.store');
 //Index
-Route::get('comic/index', [controllerCustomer::class,'index'])->name('comic.index');
+Route::get('comic/index', [comicController::class,'index'])->name('comic.index');
 //Edit
-Route::get('comic/{id}/edit', [controllerCustomer::class,'edit'])->name('comic.edit');
+Route::get('comic/{id}/edit', [comicController::class,'edit'])->name('comic.edit');
 //Update
-Route::put('comic/{id}/update', [controllerCustomer::class,'update'])->name('comic.update');
+Route::put('comic/{id}/update', [comicController::class,'update'])->name('comic.update');
 //Show
-Route::get('comic/{id}/show', [controllerCustomer::class,'show'])->name('comic.show');
+Route::get('comic/{id}/show', [comicController::class,'show'])->name('comic.show');
 //Destroy
-Route::delete('comic/{id}/destroy', [controllerCustomer::class,'destroy'])->name('comic.destroy');
+Route::delete('comic/{id}/destroy', [comicController::class,'destroy'])->name('comic.destroy');
 
 //provider
 //Create

@@ -7,7 +7,7 @@
                     <h2 class="mx-5 mt-5 mb-3" style="color: #033E8C">Comic Register</h2>
                 </div>
                 <div class="card-body mx-5 my-1">
-                    <form action="" method="POST">
+                    <form action="{{route('comic.store')}}" method="POST">
                         @csrf
 
                         <h5 class="mt-2">Name</h5>
@@ -23,7 +23,7 @@
                         
                         <h5 class="mt-2">Edition</h5>
                         <div class="form-group">
-                            <input name="Edition" class="form-control border-2" type="text" placeholder="Edition" style="background-color: #e1eefe;" 
+                            <input name="Edition" class="form-control border-2" type="number" placeholder="Edition" style="background-color: #e1eefe;" 
                                 value={{ old('Edition') }}>
                             <p class='card-title fw-bold text-start' style="color:#D90404">
                                 <u>
@@ -45,7 +45,7 @@
 
                         <h5 class="mt-2">Amount</h5>
                         <div class="form-group">
-                            <input name="Amount" class="form-control border-2" type="text" placeholder="Amount" style="background-color: #e1eefe;" 
+                            <input name="Amount" class="form-control border-2" type="number" placeholder="Amount" style="background-color: #e1eefe;" 
                                 value={{ old('Amount') }}>
                             <p class='card-title fw-bold text-start' style="color:#D90404">
                                 <u>
@@ -56,7 +56,7 @@
 
                         <h5 class="mt-2">Price Buy</h5>
                         <div class="form-group">
-                            <input name="Price_buy" class="form-control border-2" type="text" placeholder="Price Buy" style="background-color: #e1eefe;" 
+                            <input name="Price_buy" class="form-control border-2" type="number" placeholder="Price Buy" style="background-color: #e1eefe;" 
                                 value={{ old('Price_buy') }}>
                             <p class='card-title fw-bold text-start' style="color:#D90404">
                                 <u>
@@ -78,8 +78,8 @@
 
                         <h5 class="mt-2">Image (Default Image Loaded)</h5>
                         <div class="form-group">
-                            <input name="title" class="form-control border-2" type="text" placeholder="Image" style="background-color: #e1eefe;" 
-                                value={{ old('Image') }}>
+                            <input name="Image" class="form-control border-2" type="text" placeholder="Image" style="background-color: #e1eefe;" 
+                                value="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png">
                             <p class='card-title fw-bold text-start' style="color:#D90404">
                                 <u>
                                     {{ $errors->first('Image') }}
