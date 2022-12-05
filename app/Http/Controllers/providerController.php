@@ -13,7 +13,8 @@ class providerController extends Controller
      */
     public function index()
     {
-        //
+        $query = DB::table('provider')->get();
+        return view('bookIndex', compact('query'));
     }
 
     /**
@@ -23,7 +24,7 @@ class providerController extends Controller
      */
     public function create()
     {
-        //
+        return view('providerCreate');
     }
 
     /**
@@ -34,7 +35,18 @@ class providerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('tb_book')->insert([
+            "isbn"=>$request->input('isbn'),
+            "title"=>$request->input('title'),
+            "author"=>$request->input('author'),
+            "number_page"=>$request->input('pages'),
+            "editorial_name"=>$request->input('editorial'),
+            "editorial_email"=>$request->input('editorialEmail'),
+            "created_at"=>Carbon::now(),
+            "updated_at"=>Carbon::now()
+        ]);
+        $query = $request->input('title');
+        return redirect('provider/create')->with('confirmacionregistro', compact('query'));
     }
 
     /**
@@ -45,7 +57,7 @@ class providerController extends Controller
      */
     public function show($id)
     {
-        //
+        //Para el buscador?
     }
 
     /**
@@ -56,7 +68,8 @@ class providerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $query = DB::table('provider')->where('Id_provider', $id)->first();
+        return view('providerEdit', compact('query'));
     }
 
     /**
@@ -68,7 +81,16 @@ class providerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('provider')->where('Id_provider', $id)->update([
+            "Isbn"=>$request->input('isbn'),
+            "Title"=>$request->input('title'),
+            "Author"=>$request->input('author'),
+            "Number_page"=>$request->input('pages'),
+            "Editorial_name"=>$request->input('editorial'),
+            "Editorial_email"=>$request->input('editorialEmail'),
+            "updated_at"=>Carbon::now()
+        ]);
+        return redirect('provider/index')->with('confirmacioneditar');
     }
 
     /**
@@ -79,6 +101,7 @@ class providerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('provider')->where('Id_provider', $id)->delete();
+        return redirect('provider/index')->with('confirmacioneliminar');
     }
 }

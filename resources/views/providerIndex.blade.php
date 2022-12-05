@@ -19,9 +19,13 @@
 
                 <div style="width: 50%" class="m-3">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>Name:    </b> </li>
-                        <li class="list-group-item"><b>Email:   </b> </li>
-                        <li class="list-group-item"><b>INE:     </b> </li>
+                        <li class="list-group-item"><b>Name:        </b> </li>
+                        <li class="list-group-item"><b>Address:     </b> </li>
+                        <li class="list-group-item"><b>Country:     </b> </li>
+                        <li class="list-group-item"><b>Contact:     </b> </li>
+                        <li class="list-group-item"><b>Cellphone:   </b> </li>
+                        <li class="list-group-item"><b>Telephone:   </b> </li>
+                        <li class="list-group-item"><b>Email:       </b> </li>
                         <div class="card-body">
                             {{-- <a href="{{ route('book.edit', $consulta->Id_book) }}" class="btn btn-dark">Edit</a> --}}
                             <a href="" class="btn" style="color:white;background-color:#033E8C">Edit</a>
