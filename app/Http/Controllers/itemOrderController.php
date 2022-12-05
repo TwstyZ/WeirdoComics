@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\orderRequest;
-use DB;
-use Carbon\Carbon;
 
-class orderController extends Controller
+class itemOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,8 +23,8 @@ class orderController extends Controller
      */
     public function create()
     {
-        $query = DB::table('provider')->select('Id_provider', 'Name', 'Contact')->get();
-        return view('orderCreate', compact('query'));
+        return view('orderCreate');
+        
     }
 
     /**
@@ -38,14 +35,7 @@ class orderController extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('order')->insert([
-            "Provider_id"=>$request->input('Id_provider'),
-            "created_at"=>Carbon::now(),
-            "updated_at"=>Carbon::now()
-        ]);
-        $query = DB::table('order')->select('Id_order')->latest()->first();
-
-        return redirect('itemOrder/Create')->with('confirmacionregistro', compact('query'));
+        //
     }
 
     /**
