@@ -12,21 +12,17 @@
 
                     <h5 class="mt-2">Provider</h5>
                     <div class="form-group">
-                        <input name="title" class="form-control border-2" type="text" placeholder="Title" style="background-color: #e1eefe;" 
-                            value={{ old('title') }}>
-                        <p class='card-title fw-bold text-start' style="color:#D90404">
-                            <u>
-                                {{ $errors->first('title') }}
-                            </u>
-                        </p>
+                        <select name="Id_provider" id="Id_provider" class="form-select" style="background-color: #e1eefe;" value={{ old('Id_provider') }}>
+                            <option value="" disabled selected>Select your option</option>
+                            @foreach ($query as $consulta)
+                            <option value="{{ $consulta->Id_provider}}">{{ $consulta->Name}]<span> | {{$consulta->Contact}}</span></option>
+                            @endforeach
+                        </select>
                     </div>
-
-
-
                     <div class="mt-4 mb-5">
                         <button type="submit" class="btn"
                             style="background-color: #033E8C;color:white">Save</button>
-                        <a href="" class="btn" style="background-color: #D90404;color:white">Cancel</a>
+                        <a href="{{ route('home') }}" class="btn" style="background-color: #D90404;color:white">Cancel</a>
                     </div>
             </div>
             </form>
