@@ -10,7 +10,7 @@
                 <form action="" method="POST">
                     @csrf
 
-                    <h5 class="mt-2">Title</h5>
+                    <h5 class="mt-2">Provider</h5>
                     <div class="form-group">
                         <input name="title" class="form-control border-2" type="text" placeholder="Title" style="background-color: #e1eefe;" 
                             value={{ old('title') }}>
