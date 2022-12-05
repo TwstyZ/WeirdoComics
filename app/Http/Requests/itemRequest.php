@@ -31,6 +31,7 @@ class itemRequest extends FormRequest
             'Price_buy'=>'required',
             'Admission_date'=>'required',
             'Image'=>'required',
+            'Id'=>'required',
         ];
     }
 }

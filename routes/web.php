@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\comicController;
 
-=======
 use App\Http\Controllers\itemController;
 use App\Http\Controllers\orderController;
 use App\Http\Controllers\providerController;
@@ -50,12 +49,12 @@ Route::get('comic/create', [comicController::class,'create'])->name('comic.creat
 Route::post('comic/store', [comicController::class,'store'])->name('comic.store');
 //Index
 Route::get('comic/index', [comicController::class,'index'])->name('comic.index');
+//Show
+Route::post('comic/show', [comicController::class,'show'])->name('comic.show');
 //Edit
 Route::get('comic/{id}/edit', [comicController::class,'edit'])->name('comic.edit');
 //Update
 Route::put('comic/{id}/update', [comicController::class,'update'])->name('comic.update');
-//Show
-Route::get('comic/{id}/show', [comicController::class,'show'])->name('comic.show');
 //Destroy
 Route::delete('comic/{id}/destroy', [comicController::class,'destroy'])->name('comic.destroy');
 

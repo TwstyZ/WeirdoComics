@@ -24,7 +24,7 @@ return new class extends Migration
             $table->double('Price_buy', 8, 4);
             $table->double('Price_sell', 8, 4)->nullable();
             $table->dateTime('Admission_date');
-            $table->string('Image',500)->default('https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png');
+            $table->string('Image',500)->default('https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2017/png/iconmonstr-book-28.png&r=0&g=0&b=0');
             $table->timestamps();
         });
     }
