@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Item_sale', function (Blueprint $table) {
-            $table->increments('Id_item-sale');
+            $table->increments('Id_item_sale');
             $table->integer('Amount');
             $table->double('Total', 8, 4);
             $table->timestamps();

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('Address');
             $table->string('Country');
             $table->string('Contact');
-            $table->integer('Cellphone');
-            $table->integer('Telephone');
+            $table->bigInteger('Cellphone');
+            $table->bigInteger('Telephone');
             $table->string('Email');
             $table->string('Image', 500)->default('https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2012/png/iconmonstr-user-5.png&r=0&g=0&b=0');
             $table->timestamps();
