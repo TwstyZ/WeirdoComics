@@ -88,13 +88,14 @@ class providerController extends Controller
     public function update(Request $request, $id)
     {
         DB::table('provider')->where('Id_provider', $id)->update([
-            "Isbn"=>$request->input('isbn'),
-            "Title"=>$request->input('title'),
-            "Author"=>$request->input('author'),
-            "Number_page"=>$request->input('pages'),
-            "Editorial_name"=>$request->input('editorial'),
-            "Editorial_email"=>$request->input('editorialEmail'),
-            "updated_at"=>Carbon::now()
+            "Name"=>$request->input('Name'),
+            "Address"=>$request->input('Address'),
+            "Country"=>$request->input('Country'),
+            "Contact"=>$request->input('Contact'),
+            "Cellphone"=>$request->input('Cellphone'),
+            "Telephone"=>$request->input('Telephone'),
+            "Email"=>$request->input('Email'),
+            "updated_at"=>Carbon::now(),
         ]);
         return redirect('provider/index')->with('confirmacioneditar');
     }

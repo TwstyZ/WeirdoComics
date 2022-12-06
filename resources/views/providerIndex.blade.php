@@ -29,7 +29,7 @@
                             <li class="list-group-item"><b>Email: </b> {{ $consulta->Email }}</li>
                             <div class="card-body">
                                 {{-- <a href="{{ route('book.edit', $consulta->Id_book) }}" class="btn btn-dark">Edit</a> --}}
-                                <a href="" class="btn" style="color:white;background-color:#033E8C">Edit</a>
+                                <a href="{{route('provider.edit', $consulta->Id_provider)}}" class="btn" style="color:white;background-color:#033E8C">Edit</a>
                                 {{-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $consulta->Id_book }}">Delete</button> --}}
                                 <button type="button" class="btn" style="background-color:#D90404;color:white"
                                     data-bs-toggle="modal" data-bs-target="#ProviderDelete{{$consulta -> Id_provider}}">Delete</button>
