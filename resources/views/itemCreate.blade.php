@@ -7,7 +7,7 @@
                     <h2 class="mx-5 mt-5 mb-3" style="color: #033E8C">Item Register</h2>
                 </div>
                 <div class="card-body mx-5 my-1">
-                    <form action="" method="POST">
+                    <form action="{{route('item.store')}}" method="POST">
                         @csrf
 
                         <h5 class="mt-2">Name</h5>
@@ -90,8 +90,8 @@
  
                         <h5 class="mt-2">Image (Default Image Loaded)</h5>
                         <div class="form-group">
-                            <input name="title" class="form-control border-2" type="text" placeholder="Image" style="background-color: #e1eefe;" 
-                                value={{ old('Image') }}>
+                            <input name="Image" class="form-control border-2" type="text" placeholder="Image" style="background-color: #e1eefe;" 
+                            value="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2017/png/iconmonstr-book-28.png&r=0&g=0&b=0">
                             <p class='card-title fw-bold text-start' style="color:#D90404">
                                 <u>
                                     {{ $errors->first('Image') }}

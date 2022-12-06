@@ -1,6 +1,35 @@
 @extends('template')
 @section('content')
-    @include('comicDelete')
+@include('comicDelete')
+
+<div class="d-flex justify-content-center"><h1 class="mt-3" style="color: #033E8C">Comics</h1></div>
+<div class="d-flex justify-content-center">
+    <div class="row justify-content-center">
+        <div class="container">
+            <form method="POST" action="{{route('comic.show')}}"> 
+                @csrf
+            <div class="row">
+                <input class="form-control me-17" type="text" name="Id" placeholder="Search" list="datalistOptions">
+            </div>
+            <div class="row">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                <datalist id="datalistOptions">
+      @foreach ($selectBook as $consulta) 
+      @if($consulta->Type=='Comic')
+                  <option value="{{$consulta->Id_item}}">{{$consulta->Name}}</option>
+        @endif
+      @endforeach
+                </datalist>
+            </div>
+        </form>
+            </div>
+      </div>
+</div>
+
+<div class="d-flex justify-content-end"><a href="{{route("comic.create")}}" class="btn btn-warning mt-1 mx-5 text-white p-2">Add Comic</a></div>
+    
+
+
 
 
     @if (session()->has('Eliminado'))
@@ -47,7 +76,9 @@
     <div class="d-flex justify-content-end"><a href="{{ route('comic.create') }}"
             class="btn btn-warning mt-1 mx-5 text-white p-2">Add Comic</a></div>
     <div class="d-flex justify-content-center m-3 flex-wrap">
-        @foreach ($selectBook as $consulta)
+        @foreach ($selectBook as $consulta) 
+        @if($consulta->Type=='Comic')
+
             @csrf
             {!! method_field('PUT') !!}
             <div class="card bg-light m-3 rounded-lg border-gray border-2" style="width: 18rem;">
@@ -83,7 +114,8 @@
                         data-bs-toggle="modal" data-bs-target="#comicDelete{{ $consulta->Id_item }}">Delete</button>
                 </div>
             </div>
-        @endforeach
+            @endif
+            @endforeach
     </div>
 
 @stop
