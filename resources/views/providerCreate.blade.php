@@ -2,13 +2,13 @@
 @section('content')
 
 
-@if (session()->has('confirmacionregistro'))
-{!! "<script>Swal.fire(
-        'Success',
-        'Saved provider',
-        'success'
-    )</script>" !!}
-@endif
+    @if (session()->has('confirmacionregistro'))
+        {!! "<script>Swal.fire(
+                'Success',
+                'Saved provider',
+                'success'
+            )</script>" !!}
+    @endif
     <div class="container d-flex justify-content-center my-5">
         <div class="card border-2" style="width:70%;">
             <div class="card-header bg-light">
@@ -110,7 +110,8 @@
 
                     <div class="mt-4 mb-5">
                         <button type="submit" class="btn" style="background-color: #033E8C;color:white">Save</button>
-                        <a href="{{route('home')}}" class="btn" style="background-color: #D90404;color:white">Cancel</a>
+                        <a href="{{ route('home') }}" class="btn"
+                            style="background-color: #D90404;color:white">Cancel</a>
                     </div>
             </div>
             </form>
