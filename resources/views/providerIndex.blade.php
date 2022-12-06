@@ -1,6 +1,6 @@
 @extends('template')
 @section('content')
-
+@include('providerDelete')
     <div class="d-flex justify-content-center">
         <h1 class="mt-3" style="color: #033E8C">Provider Index</h1>
     </div>
@@ -32,7 +32,7 @@
                                 <a href="" class="btn" style="color:white;background-color:#033E8C">Edit</a>
                                 {{-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $consulta->Id_book }}">Delete</button> --}}
                                 <button type="button" class="btn" style="background-color:#D90404;color:white"
-                                    data-bs-toggle="modal" data-bs-target="">Delete</button>
+                                    data-bs-toggle="modal" data-bs-target="#ProviderDelete{{$consulta -> Id_provider}}">Delete</button>
                             </div>
                         </ul>
                     </div>
