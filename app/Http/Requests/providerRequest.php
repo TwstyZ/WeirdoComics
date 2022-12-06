@@ -13,7 +13,7 @@ class providerRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class providerRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "Name"=>'required',
+            "Address"=>'required',
+            "Country"=>'required',
+            "Contact"=>'required',
+            "Cellphone"=>'required|numeric',
+            "Telephone"=>'required|numeric',
+            "Email"=>'required|email',
+            "Image"=>'required',
         ];
     }
 }

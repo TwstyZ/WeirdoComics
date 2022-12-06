@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
+use App\Http\Requests\providerRequest;
+
 
 class providerController extends Controller
 {
@@ -14,7 +18,7 @@ class providerController extends Controller
     public function index()
     {
         $query = DB::table('provider')->get();
-        return view('bookIndex', compact('query'));
+        return view('providerIndex', compact('query'));
     }
 
     /**
@@ -33,19 +37,21 @@ class providerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(providerRequest $request)
     {
-        DB::table('tb_book')->insert([
-            "isbn"=>$request->input('isbn'),
-            "title"=>$request->input('title'),
-            "author"=>$request->input('author'),
-            "number_page"=>$request->input('pages'),
-            "editorial_name"=>$request->input('editorial'),
-            "editorial_email"=>$request->input('editorialEmail'),
+        DB::table('provider')->insert([
+            "Name"=>$request->input('Name'),
+            "Address"=>$request->input('Address'),
+            "Country"=>$request->input('Country'),
+            "Contact"=>$request->input('Contact'),
+            "Cellphone"=>$request->input('Cellphone'),
+            "Telephone"=>$request->input('Telephone'),
+            "Email"=>$request->input('Email'),
+            "image"=>$request->input('Image'),
             "created_at"=>Carbon::now(),
-            "updated_at"=>Carbon::now()
+            "updated_at"=>Carbon::now(),
         ]);
-        $query = $request->input('title');
+        $query = $request->input('Name');
         return redirect('provider/create')->with('confirmacionregistro', compact('query'));
     }
 
