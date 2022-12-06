@@ -111,7 +111,7 @@
                                 style="background-color: #e1eefe;" value={{ $query->Image }}>
                             <p class='card-title fw-bold text-start' style="color:#D90404">
                                 <u>
-                                    {{ $errors->first('Email') }}
+                                    {{ $errors->first('Imagen') }}
                                 </u>
                             </p>
                         </div>
