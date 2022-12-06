@@ -35,65 +35,67 @@
                     </p>
                 </div>
 
-                <h5 class="mt-2">Company</h5>
-                <div class="form-group">
-                    <input name="Brand" class="form-control border-2" type="text" placeholder="Company" style="background-color: #e1eefe;" 
-                        value={{$consultaId->Brand}}>
-                    <p class='card-title fw-bold text-start' style="color:#D90404">
-                        <u>
-                            {{ $errors->first('Brand') }}
-                        </u>
-                    </p>
-                </div>
 
-                <h5 class="mt-2">Amount</h5>
-                <div class="form-group">
-                    <input name="Amount" class="form-control border-2" type="number" placeholder="Amount" style="background-color: #e1eefe;" 
-                        value={{$consultaId->Amount}}>
-                    <p class='card-title fw-bold text-start' style="color:#D90404">
-                        <u>
-                            {{ $errors->first('Amount') }}
-                        </u>
-                    </p>
-                </div>
+                    <h5 class="mt-2">Company</h5>
+                    <div class="form-group">
+                        <input name="Brand" class="form-control border-2" type="text" placeholder="Company"
+                            style="background-color: #e1eefe;" value="{{ $consultaId->Brand }}">
+                        <p class='card-title fw-bold text-start' style="color:#D90404">
+                            <u>
+                                {{ $errors->first('Brand') }}
+                            </u>
+                        </p>
+                    </div>
 
-                <h5 class="mt-2">Price Buy</h5>
-                <div class="form-group">
-                    <input name="Price_buy" class="form-control border-2" type="number" placeholder="Price Buy" style="background-color: #e1eefe;" 
-                        value={{$consultaId->Price_buy}}>
-                    <p class='card-title fw-bold text-start' style="color:#D90404">
-                        <u>
-                            {{ $errors->first('Price_buy') }}
-                        </u>
-                    </p>
-                </div>
+                    <h5 class="mt-2">Amount</h5>
+                    <div class="form-group">
+                        <input name="Amount" class="form-control border-2" type="number" placeholder="Amount"
+                            style="background-color: #e1eefe;" value="{{ $consultaId->Amount }}">
+                        <p class='card-title fw-bold text-start' style="color:#D90404">
+                            <u>
+                                {{ $errors->first('Amount') }}
+                            </u>
+                        </p>
+                    </div>
 
-                <h5 class="mt-2">Admission Date</h5>
-                <div class="form-group">
-                    <input name="Admission_date" class="form-control border-2" type="date" placeholder="Admission Date" style="background-color: #e1eefe;" 
-                        value={{$consultaId->Admission_date}}>
-                    <p class='card-title fw-bold text-start' style="color:#D90404">
-                        <u>
-                            {{ $errors->first('Admission_date') }}
-                        </u>
-                    </p>
-                </div>
+                    <h5 class="mt-2">Price Buy</h5>
+                    <div class="form-group">
+                        <input name="Price_buy" class="form-control border-2" type="number" placeholder="Price Buy"
+                            style="background-color: #e1eefe;" value="{{ $consultaId->Price_buy }}">
+                        <p class='card-title fw-bold text-start' style="color:#D90404">
+                            <u>
+                                {{ $errors->first('Price_buy') }}
+                            </u>
+                        </p>
+                    </div>
 
-                <h5 class="mt-2">Image (Default Image Loaded)</h5>
-                <div class="form-group">
-                    <input name="Image" class="form-control border-2" type="text" placeholder="Image" style="background-color: #e1eefe;" 
-                        value={{$consultaId->Image}}>
-                    <p class='card-title fw-bold text-start' style="color:#D90404">
-                        <u>
-                            {{ $errors->first('Image') }}
-                        </u>
-                    </p>
-                </div>
-        <div class="card-footer">
-            <button class="btn btn-primary" type="submit">Actualizar Comic</button>
-            </form>
+                    <h5 class="mt-2">Admission Date</h5>
+                    <div class="form-group">
+                        <input name="Admission_date" class="form-control border-2" type="date"
+                            placeholder="Admission Date" style="background-color: #e1eefe;"
+                            value="{{ $consultaId->Admission_date }}">
+                        <p class='card-title fw-bold text-start' style="color:#D90404">
+                            <u>
+                                {{ $errors->first('Admission_date') }}
+                            </u>
+                        </p>
+                    </div>
+
+                    <h5 class="mt-2">Image (Default Image Loaded)</h5>
+                    <div class="form-group">
+                        <input name="Image" class="form-control border-2" type="text" placeholder="Image"
+                            style="background-color: #e1eefe;" value="{{ $consultaId->Image }}">
+                        <p class='card-title fw-bold text-start' style="color:#D90404">
+                            <u>
+                                {{ $errors->first('Image') }}
+                            </u>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <button  type="submit" class=" btn text-white my-3" style="background-color: #033E8C">Actualizar Comic</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-
 @stop
