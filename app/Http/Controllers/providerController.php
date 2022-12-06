@@ -85,7 +85,7 @@ class providerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(providerRequest $request, $id)
     {
         DB::table('provider')->where('Id_provider', $id)->update([
             "Name"=>$request->input('Name'),
@@ -95,6 +95,7 @@ class providerController extends Controller
             "Cellphone"=>$request->input('Cellphone'),
             "Telephone"=>$request->input('Telephone'),
             "Email"=>$request->input('Email'),
+            "image"=>$request->input('Image'),
             "updated_at"=>Carbon::now(),
         ]);
         return redirect('provider/index')->with('confirmacioneditar',"xxx");

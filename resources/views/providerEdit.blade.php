@@ -104,6 +104,18 @@
                                 </u>
                             </p>
                         </div>
+
+                        <h5 class="mt-2">Imagen</h5>
+                        <div class="form-group">
+                            <input name="Image" class="form-control border-2" type="text" placeholder="Image"
+                                style="background-color: #e1eefe;" value={{ $query->Image }}>
+                            <p class='card-title fw-bold text-start' style="color:#D90404">
+                                <u>
+                                    {{ $errors->first('Email') }}
+                                </u>
+                            </p>
+                        </div>
+
                         <div class="mt-4 mb-5">
                             <button type="submit" class="btn"
                                 style="background-color: #033E8C;color:white">Save</button>
