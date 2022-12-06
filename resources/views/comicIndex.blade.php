@@ -3,12 +3,6 @@
 @include('comicDelete')
 
 
-<div class="d-flex justify-content-end"><a href="{{route("comic.create")}}" class="btn btn-warning mt-1 mx-5 text-white p-2">Add Comic</a></div>
-    
-
-
-
-
     @if (session()->has('Eliminado'))
     {!! "<script>Swal.fire(
             'Success',
