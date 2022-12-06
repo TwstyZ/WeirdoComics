@@ -6,11 +6,11 @@
         
         <div class="card border-2" style="width:70%;">
             <div class="card-header bg-light">
-                <h1 class="mx-5 mt-5 mb-3" style="color: #033E8C">
+                <h2 class="mx-5 mt-5 mb-3" style="color: #033E8C">
                     Editar información del comic
-                </h1>
+                </h2>
             </div>
-            <div class="card-body">
+            <div class="card-body mx-5 my-1">
                 <form method="POST" action="{{ route('comic.update', $consultaId->Id_item) }}">
                     @csrf
                     {!! method_field('PUT') !!}
