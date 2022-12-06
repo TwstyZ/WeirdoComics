@@ -23,8 +23,7 @@ class itemOrderController extends Controller
      */
     public function create()
     {
-        return view('orderCreate');
-        
+        return view('itemOrderCreate');
     }
 
     /**

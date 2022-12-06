@@ -7,6 +7,8 @@ use App\Http\Controllers\orderController;
 use App\Http\Controllers\providerController;
 use App\Http\Controllers\saleController;
 use App\Http\Controllers\sellerController;
+use App\Http\Controllers\itemOrderController;
+
 
 
 
@@ -124,4 +126,4 @@ Route::delete('seller/{id}/destroy', [sellerController::class,'destroy'])->name(
 
 //itemOrder
 //Create
-Route::post('itemOrder/create', [itemOrderController::class,'create'])->name('item.create');
+Route::get('itemOrder/create', [itemOrderController::class,'create'])->name('item.create');

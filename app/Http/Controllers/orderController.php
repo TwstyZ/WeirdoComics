@@ -45,7 +45,7 @@ class orderController extends Controller
         ]);
         $query = DB::table('order')->select('Id_order')->latest()->first();
 
-        return redirect('itemOrder/Create')->with('confirmacionregistro', compact('query'));
+        return redirect('itemOrder/create')->with(compact('query'));
     }
 
     /**
