@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Carbon\Carbon;
+use Session;
 
 class itemOrderController extends Controller
 {
@@ -23,7 +26,10 @@ class itemOrderController extends Controller
      */
     public function create()
     {
-        return view('itemOrderCreate');
+        $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')->get();
+        $idOrder =  Session::get('idOrder');
+        return view('itemOrderCreate')->with(compact('idOrder', 'query'));
+
     }
 
     /**
