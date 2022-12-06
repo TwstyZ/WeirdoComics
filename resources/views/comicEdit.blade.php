@@ -10,7 +10,7 @@
         <div class="card-header">
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('comic.update',$consulta->Id_item)}}">
+            <form method="POST" action="{{route('comic.update',$consultaId->Id_item)}}">
                 @csrf
                 {!!method_field('PUT')!!}
                 <h5 class="mt-2">Name</h5>

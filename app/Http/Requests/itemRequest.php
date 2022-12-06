@@ -25,13 +25,13 @@ class itemRequest extends FormRequest
     {
         return [
             'Name'=>'required',
-            'Edition'=>'required',
+            'Type'=>'required',
             'Brand'=>'required',
+            'Description'=>'required',
             'Amount'=>'required',
             'Price_buy'=>'required',
             'Admission_date'=>'required',
             'Image'=>'required',
-            'Id'=>'required',
         ];
     }
 }

@@ -15,7 +15,9 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
                 <datalist id="datalistOptions">
       @foreach ($selectBook as $consulta) 
+      @if($consulta->Type=='Comic')
                   <option value="{{$consulta->Id_item}}">{{$consulta->Name}}</option>
+        @endif
       @endforeach
                 </datalist>
             </div>
@@ -35,6 +37,7 @@
 
     <div class="d-flex justify-content-center m-3 flex-wrap">
         @foreach ($selectBook as $consulta) 
+        @if($consulta->Type=='Comic')
             @csrf
             {!! method_field('PUT') !!}
             <div class="card bg-light m-3 rounded-lg border-gray border-2" style="width: 18rem;">
@@ -67,7 +70,7 @@
                     <button type="button" class="btn" style="background-color:#D90404;color:white" data-bs-toggle="modal" data-bs-target="#comicDelete{{$consulta->Id_item}}">Delete</button>
                 </div>
             </div>
-
+            @endif
             @endforeach
     </div>
 
