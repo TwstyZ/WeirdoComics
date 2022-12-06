@@ -28,8 +28,8 @@ class providerRequest extends FormRequest
             "Address"=>'required',
             "Country"=>'required',
             "Contact"=>'required',
-            "Cellphone"=>'required|numeric',
-            "Telephone"=>'required|numeric',
+            "Cellphone"=>'required|numeric|min_digits:10',
+            "Telephone"=>'required|numeric|min_digits:10',
             "Email"=>'required|email',
             "Image"=>'required',
         ];
