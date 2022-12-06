@@ -2,17 +2,17 @@
 @section('content')
 
 
-@if (session()->has('confirmacionregistro'))
-{!! "<script>Swal.fire(
-        'Success',
-        'Saved provider',
-        'success'
-    )</script>" !!}
-@endif
+    @if (session()->has('confirmacionregistro'))
+        {!! "<script>Swal.fire(
+                'Success',
+                'Saved provider',
+                'success'
+            )</script>" !!}
+    @endif
     <div class="container d-flex justify-content-center my-5">
         <div class="card border-2" style="width:70%;">
             <div class="card-header bg-light">
-                <h2 class="mx-5 mt-5 mb-3" style="color: #033E8C">Provider Register</h2>
+                <h2 class="mx-5 mt-5 mb-3" style="color: #033E8C">Provider register</h2>
             </div>
             <div class="card-body mx-5 my-1">
                 <form action="{{ route('provider.store') }}" method="POST">
@@ -98,7 +98,7 @@
                     <h5 class="mt-2">Image (Default Image Loaded)</h5>
                     <div class="form-group">
                         <input name="Image" class="form-control border-2" type="text" placeholder="Image"
-                            style="background-color: #e1eefe;" value={{ old('Image') }}>
+                            style="background-color: #e1eefe;" value="https://cdn.icon-icons.com/icons2/574/PNG/512/Freight_transport_icon-icons.com_54817.png">
                         <p class='card-title fw-bold text-start' style="color:#D90404">
                             <u>
                                 {{ $errors->first('Image') }}
@@ -110,7 +110,8 @@
 
                     <div class="mt-4 mb-5">
                         <button type="submit" class="btn" style="background-color: #033E8C;color:white">Save</button>
-                        <a href="{{route('home')}}" class="btn" style="background-color: #D90404;color:white">Cancel</a>
+                        <a href="{{ route('provider.index') }}" class="btn"
+                            style="background-color: #D90404;color:white">Cancel</a>
                     </div>
             </div>
             </form>
