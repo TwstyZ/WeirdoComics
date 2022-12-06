@@ -12,7 +12,7 @@
     <div class="container d-flex justify-content-center my-5">
         <div class="card border-2" style="width:70%;">
             <div class="card-header bg-light">
-                <h2 class="mx-5 mt-5 mb-3" style="color: #033E8C">Provider Register</h2>
+                <h2 class="mx-5 mt-5 mb-3" style="color: #033E8C">Provider register</h2>
             </div>
             <div class="card-body mx-5 my-1">
                 <form action="{{ route('provider.store') }}" method="POST">
@@ -110,7 +110,7 @@
 
                     <div class="mt-4 mb-5">
                         <button type="submit" class="btn" style="background-color: #033E8C;color:white">Save</button>
-                        <a href="{{ route('home') }}" class="btn"
+                        <a href="{{ route('provider.index') }}" class="btn"
                             style="background-color: #D90404;color:white">Cancel</a>
                     </div>
             </div>
