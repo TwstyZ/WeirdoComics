@@ -97,7 +97,7 @@ class providerController extends Controller
             "Email"=>$request->input('Email'),
             "updated_at"=>Carbon::now(),
         ]);
-        return redirect('provider/index')->with('confirmacioneditar');
+        return redirect('provider/index')->with('confirmacioneditar',"xxx");
     }
 
     /**
@@ -109,6 +109,6 @@ class providerController extends Controller
     public function destroy($id)
     {
         DB::table('provider')->where('Id_provider', $id)->delete();
-        return redirect('provider/index')->with('confirmacioneliminar');
+        return redirect('provider/index')->with('confirmacioneliminar',"xxx");
     }
 }

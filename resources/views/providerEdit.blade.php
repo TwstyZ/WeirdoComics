@@ -1,6 +1,13 @@
 @extends('template')
 @section('content')
 
+@if (session()->has('confirmacioneditar'))
+{!! "<script>Swal.fire(
+        'Success',
+        'Provider edited',
+        'success'
+    )</script>" !!}
+@endif
     <div class="d-flex justify-content-center">
         <h1 class="mt-3" style="color: #033E8C">Provider Editor</h1>
     </div>

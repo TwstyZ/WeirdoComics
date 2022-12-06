@@ -1,12 +1,31 @@
 @extends('template')
 @section('content')
 @include('providerDelete')
+
+@if (session()->has('confirmacioneliminar'))
+{!! "<script>Swal.fire(
+        'Success',
+        'Provider removed',
+        'success'
+    )</script>" !!}
+@endif
+
+@if (session()->has('confirmacioneditar'))
+{!! "<script>Swal.fire(
+        'Success',
+        'Provider edited',
+        'success'
+    )</script>" !!}
+@endif
+
     <div class="d-flex justify-content-center">
         <h1 class="mt-3" style="color: #033E8C">Provider Index</h1>
     </div>
 
     <div class="d-flex justify-content-end"><a href="" class="btn btn-warning mt-1 mx-5 text-white p-2">Add Item</a>
     </div>
+
+    
 
     @foreach ($query as $consulta)
         <div class="d-flex justify-content-center m-3 flex-wrap">

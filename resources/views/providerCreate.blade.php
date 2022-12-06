@@ -1,5 +1,14 @@
 @extends('template')
 @section('content')
+
+
+@if (session()->has('confirmacionregistro'))
+{!! "<script>Swal.fire(
+        'Success',
+        'Saved provider',
+        'success'
+    )</script>" !!}
+@endif
     <div class="container d-flex justify-content-center my-5">
         <div class="card border-2" style="width:70%;">
             <div class="card-header bg-light">
