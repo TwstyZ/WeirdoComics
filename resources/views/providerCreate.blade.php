@@ -98,7 +98,7 @@
                     <h5 class="mt-2">Image (Default Image Loaded)</h5>
                     <div class="form-group">
                         <input name="Image" class="form-control border-2" type="text" placeholder="Image"
-                            style="background-color: #e1eefe;" value={{ old('Image') }}>
+                            style="background-color: #e1eefe;" value="https://cdn.icon-icons.com/icons2/574/PNG/512/Freight_transport_icon-icons.com_54817.png">
                         <p class='card-title fw-bold text-start' style="color:#D90404">
                             <u>
                                 {{ $errors->first('Image') }}
