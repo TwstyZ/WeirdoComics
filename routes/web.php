@@ -126,4 +126,7 @@ Route::delete('seller/{id}/destroy', [sellerController::class,'destroy'])->name(
 
 //itemOrder
 //Create
-Route::get('itemOrder/create', [itemOrderController::class,'create'])->name('item.create');
+Route::get('itemOrder/create', [itemOrderController::class,'create'])->name('itemOrder.create');
+//Store
+Route::post('itemOrder/store', [itemOrderController::class,'store'])->name('itemOrder.store');
+

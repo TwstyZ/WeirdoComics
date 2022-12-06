@@ -55,6 +55,19 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sell Order
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#416284"
+                            aria-labelledby="navbarDarkDropdownMenuLink">
+
+                            <li><a class="dropdown-item" href="{{route('comic.index')}}">Generate</a></li>
+                            <li><a class="dropdown-item" href="{{route('comic.create')}}">Check</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Items
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#416284"
@@ -75,6 +88,19 @@
 
                             <li><a class="dropdown-item" href="{{route('provider.index')}}">Check</a></li>
                             <li><a class="dropdown-item" href="{{route('provider.create')}}">Register</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Buy Order
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#416284"
+                            aria-labelledby="navbarDarkDropdownMenuLink">
+
+                            <li><a class="dropdown-item" href="{{route('order.create')}}">Generate</a></li>
+                            <li><a class="dropdown-item" href="">Check</a></li>
 
                         </ul>
                     </li>

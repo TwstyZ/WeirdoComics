@@ -43,9 +43,10 @@ class orderController extends Controller
             "created_at"=>Carbon::now(),
             "updated_at"=>Carbon::now()
         ]);
-        $query = DB::table('order')->select('Id_order')->latest()->first();
+        $idOrder = DB::table('order')->select('Id_order')->latest()->first();
+        $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')->get();
 
-        return redirect('itemOrder/create')->with(compact('query'));
+        return view('itemOrderCreate')->with(compact('idOrder', 'query'));
     }
 
     /**
