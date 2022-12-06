@@ -2,29 +2,6 @@
 @section('content')
 @include('comicDelete')
 
-<div class="d-flex justify-content-center"><h1 class="mt-3" style="color: #033E8C">Comics</h1></div>
-<div class="d-flex justify-content-center">
-    <div class="row justify-content-center">
-        <div class="container">
-            <form method="POST" action="{{route('comic.show')}}"> 
-                @csrf
-            <div class="row">
-                <input class="form-control me-17" type="text" name="Id" placeholder="Search" list="datalistOptions">
-            </div>
-            <div class="row">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-                <datalist id="datalistOptions">
-      @foreach ($selectBook as $consulta) 
-      @if($consulta->Type=='Comic')
-                  <option value="{{$consulta->Id_item}}">{{$consulta->Name}}</option>
-        @endif
-      @endforeach
-                </datalist>
-            </div>
-        </form>
-            </div>
-      </div>
-</div>
 
 <div class="d-flex justify-content-end"><a href="{{route("comic.create")}}" class="btn btn-warning mt-1 mx-5 text-white p-2">Add Comic</a></div>
     
