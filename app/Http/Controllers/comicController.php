@@ -38,12 +38,17 @@ class comicController extends Controller
      */
     public function store(itemRequest $request)
     {
+        $venta = request('Price_buy');
+
+        $precio = $venta+(0.4*$venta);
+
         DB::table('item')->insert([
             "Name"=>$request->input('Name'),
             "Edition"=>$request->input('Edition'),
             "Brand"=>$request->input('Brand'),
             "Amount"=>$request->input('Amount'),
             "Price_buy"=>$request->input('Price_buy'),
+            "Price_sell"=>$precio,
             "Admission_date"=>$request->input('Admission_date'),
             "Image"=>$request->input('Image'),
             "created_at"=>Carbon::now(),
