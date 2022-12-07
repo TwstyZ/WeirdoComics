@@ -1,7 +1,5 @@
 @foreach ($idOrder as $consulta)
 @endforeach
-{{$consulta}}
-
 @extends('template')
 @section('content')
     <div>
@@ -14,7 +12,7 @@
                     <form action="{{ route('itemOrder.store') }}" method="POST">
                         @csrf
 
-                        <input type="hidden" name="Order_id" id="">
+                        <input type="hidden" name="Order_id" id="Order_id" value="{{$consulta}}">
                         <h5 class="mt-2">Item</h5>
                         <div class="form-group">
                             <select name="Item_id" id="Item_id" class="form-select" style="background-color: #e1eefe;"
@@ -27,6 +25,7 @@
                                             {{ $consulta->Type }}</span></option>
                                 @endforeach
                             </select>
+                            
                         </div>
 
                         <h5 class="mt-2">Amount</h5>
@@ -41,10 +40,9 @@
                         </div>
 
                         <div class="mt-4 mb-5">
-                            <button type="submit" class="btn"
-                                style="background-color: #033E8C;color:white">Save</button>
-                            <a href="{{ route('home') }}" class="btn"
-                                style="background-color: #D90404;color:white">Cancel</a>
+                            <button type="submit" class="btn" style="background-color: #033E8C;color:white">+ Add Item</button>
+                            <button type="submit" class="btn" style="background-color: #D90404;color:white">Finish Order</button>
+                            
                         </div>
                 </div>
                 </form>

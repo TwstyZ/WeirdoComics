@@ -36,17 +36,14 @@ class orderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(orderRequest $request)
     {
         DB::table('order')->insert([
             "Provider_id"=>$request->input('Id_provider'),
             "created_at"=>Carbon::now(),
             "updated_at"=>Carbon::now()
         ]);
-        $idOrder = DB::table('order')->select('Id_order')->latest()->first();
-        $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')->get();
-
-        return view('itemOrderCreate')->with(compact('idOrder', 'query'));
+        return redirect('itemOrder/create');
     }
 
     /**
