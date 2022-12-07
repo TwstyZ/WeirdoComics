@@ -27,7 +27,7 @@ class itemOrderController extends Controller
     public function create()
     {
         $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')->get();
-        $idOrder =  Session::get('idOrder');
+        $idOrder = DB::table('order')->select('Id_order')->latest()->first();
         return view('itemOrderCreate')->with(compact('idOrder', 'query'));
 
     }

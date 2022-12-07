@@ -18,7 +18,13 @@
                             <option value={{$consulta->Id_provider}}>{{ $consulta->Name}}<span> | {{$consulta->Contact}}</span></option>
                             @endforeach
                         </select>
+                        
                     </div>
+                    <p class='card-title fw-bold text-start' style="color:#D90404">
+                        <u>
+                            {{ $errors->first('Id_provider') }}
+                        </u>
+                    </p>
                     <div class="mt-4 mb-5">
                         <button type="submit" class="btn" style="background-color: #033E8C;color:white">Save</button>
                         <a href="{{ route('home') }}" class="btn" style="background-color: #D90404;color:white">Cancel</a>
