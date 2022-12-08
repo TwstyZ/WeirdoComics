@@ -2,10 +2,6 @@
     @foreach ($idOrder as $idOrder)
     @endforeach
 @endif
-
-
-
-
 @extends('template')
 @section('content')
     <div>
