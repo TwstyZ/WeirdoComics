@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\orderRequest;
 use DB;
 use Carbon\Carbon;
+use App\Mail\sendEmail;
+use Illuminate\Support\Facades\Mail;
 
 class orderController extends Controller
 {
@@ -52,9 +54,9 @@ class orderController extends Controller
     public function store(orderRequest $request)
     {
         DB::table('order')->insert([
-            "Provider_id"=>$request->input('Id_provider'),
-            "created_at"=>Carbon::now(),
-            "updated_at"=>Carbon::now()
+            "Provider_id" => $request->input('Id_provider'),
+            "created_at" => Carbon::now(),
+            "updated_at" => Carbon::now()
         ]);
         return redirect('itemOrder/create');
     }
@@ -67,15 +69,15 @@ class orderController extends Controller
      */
     public function show($id)
     {
-        $select=DB::table('item_order')
-        ->join('order', 'order.Id_order', '=', 'item_order.Order_id')
-        ->join('item', 'item.Id_item', '=', 'item_order.Item_id')
-        ->join('provider', 'provider.Id_provider', '=', 'order.Provider_id')
-        ->select('order.Id_order', 'order.created_at', 'provider.Name as Name_provider', 'provider.Email', 'provider.Address', 'provider.Country', 'provider.Contact', 'provider.Cellphone', 'item_order.Amount', 'item_order.Total', 'item.Name as Name_item', 'item.Type', 'item.Brand')
-        ->where('order.Id_order', '=', $id)
-        ->get();
+        $select = DB::table('item_order')
+            ->join('order', 'order.Id_order', '=', 'item_order.Order_id')
+            ->join('item', 'item.Id_item', '=', 'item_order.Item_id')
+            ->join('provider', 'provider.Id_provider', '=', 'order.Provider_id')
+            ->select('order.Id_order', 'order.created_at', 'provider.Name as Name_provider', 'provider.Email', 'provider.Address', 'provider.Country', 'provider.Contact', 'provider.Cellphone', 'item_order.Amount', 'item_order.Total', 'item.Name as Name_item', 'item.Type', 'item.Brand')
+            ->where('order.Id_order', '=', $id)
+            ->get();
 
-        return view('itemOrderIndex',compact('select'));
+        return view('itemOrderIndex', compact('select'));
     }
 
     /**
@@ -110,5 +112,29 @@ class orderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showemail($id)
+    {
+        $select = DB::table('item_order')
+            ->join('order', 'order.Id_order', '=', 'item_order.Order_id')
+            ->join('item', 'item.Id_item', '=', 'item_order.Item_id')
+            ->join('provider', 'provider.Id_provider', '=', 'order.Provider_id')
+            ->select('order.Id_order', 'order.created_at', 'provider.Name as Name_provider', 'provider.Email', 'provider.Address', 'provider.Country', 'provider.Contact', 'provider.Cellphone', 'item_order.Amount', 'item_order.Total', 'item.Name as Name_item', 'item.Type', 'item.Brand')
+            ->where('order.Id_order', '=', $id)
+            ->get();
+
+
+            return view('templeteEmail', compact('select'));
+    }
+    public function sendemail(Request $request){
+        // $nombre = $request->input('Name_form');
+        // $asunto = $request->input('Header_email');
+        $email = $request->input('Email_form');
+        // $mensaje = $request->input('Body_email');
+
+        Mail::to($email)->send(new sendEmail);
+
+        return view('home');
     }
 }

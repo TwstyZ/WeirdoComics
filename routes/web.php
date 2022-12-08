@@ -11,8 +11,8 @@ use App\Http\Controllers\sellerController;
 use App\Http\Controllers\itemOrderController;
 use App\Http\Controllers\itemSaleController;
 use App\Http\Controllers\pdfController;
-
-
+use App\Mail\sendEmail;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,6 +112,10 @@ Route::put('order/{id}/update', [orderController::class,'update'])->name('order.
 Route::get('order/{id}/show', [orderController::class,'show'])->name('order.show');
 //Destroy
 Route::delete('order/{id}/destroy', [orderController::class,'destroy'])->name('order.destroy');
+//Show correo
+Route::get('order/{id}/email',[orderController::class,'showemail'])->name('email.show');
+
+Route::post('order/sendemail',[orderController::class,'sendemail'])->name('email.send');
 
 //seller
 //Create
