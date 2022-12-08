@@ -16,7 +16,7 @@
     <title>Email</title>
 </head>
 <body>
-    <p>To: {{$select[0]->Name_provider}}</p>
+    {{-- <p>To: {{$select[0]->Name_provider}}</p>
     <p>Email: {{$select[0]->Email}}</p>
     <p>Address: {{$select[0]->Address}}</p>
     <p>Country: {{$select[0]->Country}}</p>
@@ -27,6 +27,54 @@
     <p>Total: {{$select[0]->Total}}</p>
     <p>Item: {{$select[0]->Name_item}}</p>
     <p>Type: {{$select[0]->Type}}</p>
-    <p>Brand: {{$select[0]->Brand}}</p>
+    <p>Brand: {{$select[0]->Brand}}</p> --}}
+  <div style="">
+    <h2>Datos del Proveedor</h2>
+    <table class="default">
+    
+        <tr>
+      
+          <td>To:</td>
+      
+          <td>Email:</td>
+      
+          <td>Address:</td>
+    
+          <td>Country </td>
+          <td>Cellphone</td>
+      
+        </tr>
+        <tr>
+            <td> {{$select[0]->Name_provider}}</td>
+            <td> {{$select[0]->Email}}</td>
+            <td> {{$select[0]->Address}} </td>
+            <td>{{$select[0]->Country}}</td>
+            <td> {{$select[0]->Cellphone}}</td>
+        </tr>
+    
+    </table>
+    <h2>Datos del pedido</h2>
+      
+    <table>
+        <tr>
+      
+            <td>No.pedido: </td>
+            <td>Amount: </td>
+            <td>Total: </td>
+            <td>Item: </td>
+              <td>Brand: </td>
+          </tr>
+          <tr>
+            <td>{{$select[0]->Id_order}}</td>
+            <td>{{$select[0]->Amount}}</td>
+            <td>{{$select[0]->Total}}</td>
+            <td>{{$select[0]->Name_item}}</td>
+            <td>{{$select[0]->Brand}}</td>
+          </tr>
+    </table>
+  </div>
+   
+  
+
 </body>
 </html>
