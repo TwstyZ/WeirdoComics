@@ -24,8 +24,7 @@
 
                         <h5 class="mt-2">Item</h5>
                         <div class="form-group">
-                            <select name="Item_id" id="Item_id" class="form-select" style="background-color: #e1eefe;"
-                                value={{ old('Item_id') }}>
+                            <select name="Item_id" id="Item_id" class="form-select" style="background-color: #e1eefe;">
                                 <option value="" disabled selected>Select your option</option>
                                 @foreach ($query as $consulta)
                                     <option value="{{ $consulta->Id_item }}|{{ $consulta->Price_sell }}">
@@ -46,7 +45,7 @@
                         <h5 class="mt-2">Amount</h5>
                         <div class="form-group">
                             <input name="Amount" class="form-control border-2" type="text" placeholder="Amount"
-                                style="background-color: #e1eefe;" value={{ old('Amount') }}>
+                                style="background-color: #e1eefe;">
                             <p class='card-title fw-bold text-start' style="color:#D90404">
                                 <u>
                                     {{ $errors->first('Amount') }}

@@ -11,7 +11,7 @@
                     <form action="{{route('sale.store')}}" method="POST">
                         @csrf
 
-                        <h5 class="mt-2">Provider</h5>
+                        <h5 class="mt-2">Seller</h5>
                         <div class="form-group">
                             <select name="Id_seller" id="Id_seller" class="form-select"
                                 style="background-color: #e1eefe;" value={{ old('Id_seller') }}>
@@ -29,7 +29,7 @@
                         </div>
                         <p class='card-title fw-bold text-start' style="color:#D90404">
                             <u>
-                                {{ $errors->first('Id_provider') }}
+                                {{ $errors->first('Id_seller') }}
                             </u>
                         </p>
                         <div class="mt-4 mb-5">

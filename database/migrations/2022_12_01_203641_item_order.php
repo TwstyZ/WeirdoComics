@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('Item_order', function (Blueprint $table) {
             $table->increments('Id_item_order');
             $table->integer('Amount');
-            $table->double('Total', 8, 4);
+            $table->double('Total', 20, 4);
             $table->timestamps();
             $table->unsignedInteger('Order_id');
             $table->foreign('Order_id')->references('Id_order')->on('Order')->onDelete('cascade');
