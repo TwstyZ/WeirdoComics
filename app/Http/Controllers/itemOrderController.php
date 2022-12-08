@@ -57,7 +57,7 @@ class itemOrderController extends Controller
             "updated_at"=>Carbon::now()
         ]);
         $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')->get();
-        return view('itemOrderCreate')->with(compact('idOrder', 'query'));
+        return redirect('itemOrder/create')->with(compact('idOrder', 'query'));
     }
 
     /**
