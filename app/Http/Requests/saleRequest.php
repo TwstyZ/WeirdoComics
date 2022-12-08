@@ -24,7 +24,8 @@ class saleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'Id_seller'=>'required',
+
         ];
     }
 }

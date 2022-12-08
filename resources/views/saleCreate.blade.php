@@ -1,5 +1,6 @@
 @extends('template')
 @section('content')
+
     <div>
         <div class="container d-flex justify-content-center">
             <div class="card border-2" style="width:70%;">
@@ -18,8 +19,13 @@
                                 @foreach ($query as $consulta)
                                     <option value="{{$consulta->Id_seller }}">{{$consulta->Name}}</option>
                                 @endforeach
+                                
                             </select>
-
+                            <p class='card-title fw-bold text-start' style="color:#D90404">
+                                <u>
+                                    {{ $errors->first('Id_seller') }}
+                                </u>
+                            </p>
                         </div>
                         <p class='card-title fw-bold text-start' style="color:#D90404">
                             <u>

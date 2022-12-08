@@ -1,10 +1,16 @@
 @extends('template')
 @section('content')
-
+@if (session()->has('confirmacion'))
+        {!! "<script>Swal.fire(
+                                'Success',
+                                'Order Created',
+                                'success'
+                            )</script>" !!}
+@endif
 <div class="d-flex justify-content-center"><h1 class="mt-3" style="color: #033E8C">Order Index</h1></div>
 
 
-<div class="d-flex justify-content-end"><a href="" class="btn btn-warning mt-1 mb-5 mx-5 text-white p-2">Add Item</a></div>
+<div class="d-flex justify-content-end"><a href="{{route('order.create')}}" class="btn btn-warning mt-1 mb-5 mx-5 text-white p-2">Add Order</a></div>
     
 <div class="d-flex justify-content-center" >
     <table class="table table-sm" style="width: 90%">
