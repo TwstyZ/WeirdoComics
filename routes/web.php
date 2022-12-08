@@ -32,6 +32,8 @@ Route::get('comic', function () {return view('orderIndex');});
 //PDF
 //Download
 Route::get('pdf/{id}/download', [pdfController::class,'download'])->name('pdf.download');
+//Download2
+Route::get('pdf/{id}/download2', [pdfController::class,'download2'])->name('pdf.download2');
 
 //item
 //Create

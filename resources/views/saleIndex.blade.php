@@ -28,7 +28,7 @@
                     <th>{{$consulta->created_at}}</th>
                     <th>{{$consulta->Email}}</th>
                     <th><a href="{{route('sale.show', $consulta->Id_sale)}}" class="btn" style="color: white; background-color: #F28705">Details</a></th>
-                    <th><a href="{{route('pdf.download',$consulta->Id_sale)}}" class="btn" style="color: white; background-color: #D9043D">PDF</a></th>
+                    <th><a href="{{route('pdf.download2',$consulta->Id_sale)}}" class="btn" style="color: white; background-color: #D9043D">PDF</a></th>
                 </tr>
             @endforeach
 

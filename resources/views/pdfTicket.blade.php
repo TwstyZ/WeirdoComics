@@ -46,7 +46,7 @@
                                 <div class="row">
                                     <div class="col mb-1">
                                         <p class="small text-muted mb-1">Provider</p>
-                                        <p>Nombre proovedor checar nombre de variable</p>
+                                        <p>{{$select[0]->Name_provider}}</p>
                                     </div>
                                     <div class="col mb-1">
                                         <p class="small text-muted mb-1">Contact</p>
