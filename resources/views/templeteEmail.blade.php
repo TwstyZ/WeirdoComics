@@ -1,6 +1,15 @@
 @extends('template')
 @section('content')
 
+@php(
+$select = DB::table('item_order')
+->join('order', 'order.Id_order', '=', 'item_order.Order_id')
+->join('item', 'item.Id_item', '=', 'item_order.Item_id')
+->join('provider', 'provider.Id_provider', '=', 'order.Provider_id')
+->select('order.Id_order', 'order.created_at', 'provider.Name as Name_provider', 'provider.Email', 'provider.Address', 'provider.Country', 'provider.Contact', 'provider.Cellphone', 'item_order.Amount', 'item_order.Total', 'item.Name as Name_item', 'item.Type', 'item.Brand')
+->where('order.Id_order', '=', '3')
+->get()
+)
     @php($total = 0)
     <div class="my-5 mx-5">
         <form method="POST" action="{{route('email.send')}}">
