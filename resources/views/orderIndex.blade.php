@@ -15,8 +15,8 @@
             <th scope="col">Date</th>
             <th scope="col">Email</th>
             <th scope="col">Details</th>
-            <th scope="col">PDF</th>
             <th scope="col">Email</th>
+            <th scope="col">PDF</th>
 
           </tr>
         </thead>
