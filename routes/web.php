@@ -9,6 +9,7 @@ use App\Http\Controllers\providerController;
 use App\Http\Controllers\saleController;
 use App\Http\Controllers\sellerController;
 use App\Http\Controllers\itemOrderController;
+use App\Http\Controllers\pdfController;
 
 
 
@@ -27,6 +28,9 @@ Route::get('/', function () {return view('home');});
 Route::get('main', function () {return view('home');})->name('home');
 Route::get('comic', function () {return view('orderIndex');});
 
+//PDF
+//Download
+Route::get('pdf/{id}/download', [pdfController::class,'download'])->name('pdf.download');
 
 //item
 //Create

@@ -30,7 +30,7 @@
                     <th>{{$consulta->Email}}</th>
                     <th><a href="{{route('order.show', $consulta->Id_order)}}" class="btn" style="color: white; background-color: #F28705">Details</a></th>
                     <th><a href="" class="btn" style="color: white; background-color: #033E8C">Email</a></th>
-                    <th><a href="" class="btn" style="color: white; background-color: #D9043D">PDF</a></th>
+                    <th><a href="{{route('pdf.download',$consulta->Id_order)}}" class="btn" style="color: white; background-color: #D9043D">PDF</a></th>
                 </tr>
             @endforeach
 
