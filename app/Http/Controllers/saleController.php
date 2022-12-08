@@ -35,7 +35,7 @@ class saleController extends Controller
      */
     public function create()
     {
-        $query = DB::table('seller')->select('Id_seller', 'Name')->get();
+        $query = DB::table('seller')->select('Id_seller', 'Name')->where('Type', 'like', 'v')->get();
         return view('saleCreate', compact('query'));
     }
 
