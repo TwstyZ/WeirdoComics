@@ -35,6 +35,11 @@
                                             {{ $consulta->Type }}</span></option>
                                 @endforeach
                             </select>
+                            <p class='card-title fw-bold text-start' style="color:#D90404">
+                                <u>
+                                    {{ $errors->first('Item_id') }}
+                                </u>
+                            </p>
 
                         </div>
 
@@ -54,7 +59,7 @@
                                 Item</button>
                     </form>
 
-                    <a href="{{route("home")}}" class="btn" style="background-color: #D90404;color:white">
+                    <a href="{{route("order.index")}}" class="btn" style="background-color: #D90404;color:white">
                         Finish Order
                     </a>
 
