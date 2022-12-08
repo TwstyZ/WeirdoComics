@@ -4,7 +4,8 @@
 ->join('item', 'item.Id_item', '=', 'item_order.Item_id')
 ->join('provider', 'provider.Id_provider', '=', 'order.Provider_id')
 ->select('order.Id_order', 'order.created_at', 'provider.Name as Name_provider', 'provider.Email', 'provider.Address', 'provider.Country', 'provider.Contact', 'provider.Cellphone', 'item_order.Amount', 'item_order.Total', 'item.Name as Name_item', 'item.Type', 'item.Brand')
-->where('order.Id_order', '=','9')
+// ->where('order.Id_order', '=','6')
+->latest()
 ->get())
 
 <!DOCTYPE html>
