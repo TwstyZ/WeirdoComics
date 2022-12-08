@@ -16,8 +16,8 @@ class comicController extends Controller
      */
     public function index()
     {
-        $selectBook=DB::table('item')->get();
-        return view('comicIndex',compact('selectBook'));
+        $query=DB::table('item')->get()->where('Type','Comic');
+        return view('comicIndex',compact('query'));
     }
 
     /**
@@ -54,7 +54,7 @@ class comicController extends Controller
             "created_at"=>Carbon::now(),
             "updated_at"=>Carbon::now(),
         ]);
-        return redirect('comic/create')->with('confirmacion',"tu recuerdo se guardo");
+        return redirect('comic/create')->with('confirmacion',"tu comic se guardo");
     }
 
     /**
@@ -63,11 +63,11 @@ class comicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(itemRequest $request)
+    public function show()
     {
-        $Id=$request->input();
-        $comic=DB::table('item')->where('Id_item',$Id)->get();
-        return view('comicEdit',compact('comic'));
+        $Name = request('IdItem');
+        $query=DB::table('item')->where('Name',$Name)->first();
+        return view('comicSearch',compact('query'));
     }
 
     /**
@@ -78,8 +78,8 @@ class comicController extends Controller
      */
     public function edit($id)
     {
-        $consultaId=DB::table('item')->where('Id_item',$id)->first();
-        return view('comicEdit',compact('consultaId'));
+        $query=DB::table('item')->where('Id_item',$id)->first();
+        return view('comicEdit',compact('query'));
     }
 
     /**
@@ -105,7 +105,7 @@ class comicController extends Controller
             "Image"=>$request->input('Image'),
             "updated_at"=>Carbon::now(),
         ]);
-        return redirect('comic/index')->with('Actualizado',"tu recuerdo se actualizó");
+        return redirect('comic/index')->with('Actualizado',"tu comic se actualizó");
     }
 
     /**
