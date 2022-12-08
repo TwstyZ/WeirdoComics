@@ -73,8 +73,8 @@
                         <li class="list-group-item"><b>Company: {{ $consulta->Brand }} </b></li>
                         <li class="list-group-item"><b>Description: {{ $consulta->Description }} </b></li>
                         <li class="list-group-item"><b>Amount: {{ $consulta->Amount }} </b></li>
-                        <li class="list-group-item"><b>Price sell: {{$consulta->Price_sell}}</b></li>
-                        <li class="list-group-item"><b>Price buy: {{ $consulta->Price_buy }} </b></li>
+                        <li class="list-group-item"><b>Price sell: ${{$consulta->Price_sell}}</b></li>
+                        <li class="list-group-item"><b>Price buy: ${{ $consulta->Price_buy }} </b></li>
                         <li class="list-group-item"><b>Admission date: {{ $consulta->Admission_date }} </b></li>
                     </ul>
                     <div class="card-body">
