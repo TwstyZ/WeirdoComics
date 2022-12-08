@@ -40,7 +40,7 @@ Route::get('item/{id}/edit', [itemController::class,'edit'])->name('item.edit');
 //Update
 Route::put('item/{id}/update', [itemController::class,'update'])->name('item.update');
 //Show
-Route::get('item/{id}/show', [itemController::class,'show'])->name('item.show');
+Route::post('item/show', [itemController::class,'show'])->name('item.show');
 //Destroy
 Route::delete('item/{id}/destroy', [itemController::class,'destroy'])->name('item.destroy');
 

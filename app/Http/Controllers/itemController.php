@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\itemRequest;
+use App\Http\Requests\articleRequest;
 use DB;
 use Carbon\Carbon;
 
@@ -16,8 +16,8 @@ class itemController extends Controller
      */
     public function index()
     {
-        $selectBook=DB::table('item')->get();
-        return view('itemIndex',compact('selectBook'));
+        $query=DB::table('item')->get()->where('Type','!=',"Comic");
+        return view('itemIndex',compact('query'));
     }
 
     /**
@@ -36,8 +36,12 @@ class itemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(itemRequest $request)
+    public function store(articleRequest $request)
     {
+        $venta = request('Price_buy');
+
+        $precio = $venta+(0.4*$venta);
+
         DB::table('item')->insert([
             "Name"=>$request->input('Name'),
             "Type"=>$request->input('Type'),
@@ -47,6 +51,7 @@ class itemController extends Controller
             "Price_buy"=>$request->input('Price_buy'),
             "Admission_date"=>$request->input('Admission_date'),
             "Image"=>$request->input('Image'),
+            "Price_sell"=>$precio,
             "created_at"=>Carbon::now(),
             "updated_at"=>Carbon::now(),
         ]);
@@ -59,9 +64,11 @@ class itemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $Name = request('IdItem');
+        $query=DB::table('item')->where('Name',$Name)->first();
+        return view('itemSearch',compact('query'));
     }
 
     /**
@@ -83,7 +90,7 @@ class itemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(articleRequest $request, $id)
     {
         DB::table('item')->where('Id_item',$id)->update([
             "Name"=>$request->input('Name'),

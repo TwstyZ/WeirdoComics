@@ -1,39 +1,37 @@
 @extends('template')
 @section('content')
+    <div class="container col-7">
+        <h1 class="display-4 text-center mt-5 mb-5">
+            Edit comic information
+        </h1>
+        <div class="card text-center mb-5">
+            <div class="card-header h-5">
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ route('comic.update', $query->Id_item) }}">
+                    @csrf
+                    {!! method_field('PUT') !!}
+                    <h5 class="mt-2">Name</h5>
+                    <div class="form-group">
+                        <input name="Name" class="form-control border-2" type="text" placeholder="Name"
+                            style="background-color: #e1eefe;" value="{{ $query->Name }}">
+                        <p class='card-title fw-bold text-start' style="color:#D90404">
+                            <u>
+                                {{ $errors->first('Name') }}
+                            </u>
+                        </p>
+                    </div>
 
-
-<div class="container col-7">
-    <h1 class="display-4 text-center mt-5 mb-5">
-        Editar información del comic
-    </h1>
-    <div class="card text-center mb-5">
-        <div class="card-header h-5">
-        </div>
-        <div class="card-body">
-            <form method="POST" action="{{route('comic.update',$query->Id_item)}}">
-                @csrf
-                {!!method_field('PUT')!!}
-                <h5 class="mt-2">Name</h5>
-                <div class="form-group">
-                    <input name="Name" class="form-control border-2" type="text" placeholder="Name" style="background-color: #e1eefe;" 
-                        value="{{$query->Name}}">
-                    <p class='card-title fw-bold text-start' style="color:#D90404">
-                        <u>
-                            {{ $errors->first('Name') }}
-                        </u>
-                    </p>
-                </div>
-                
-                <h5 class="mt-2">Edition</h5>
-                <div class="form-group">
-                    <input name="Edition" class="form-control border-2" type="number" placeholder="Edition" style="background-color: #e1eefe;" 
-                        value="{{$query->Edition}}">
-                    <p class='card-title fw-bold text-start' style="color:#D90404">
-                        <u>
-                            {{ $errors->first('Edition') }}
-                        </u>
-                    </p>
-                </div>
+                    <h5 class="mt-2">Edition</h5>
+                    <div class="form-group">
+                        <input name="Edition" class="form-control border-2" type="number" placeholder="Edition"
+                            style="background-color: #e1eefe;" value="{{ $query->Edition }}">
+                        <p class='card-title fw-bold text-start' style="color:#D90404">
+                            <u>
+                                {{ $errors->first('Edition') }}
+                            </u>
+                        </p>
+                    </div>
 
 
                     <h5 class="mt-2">Brand</h5>
@@ -92,10 +90,11 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <button  type="submit" class=" btn text-white my-3" style="background-color: #033E8C">Actualizar Comic</button>
+                        <button type="submit" class=" btn text-white my-3" style="background-color: #033E8C">Actualizar
+                            Comic</button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-</div>
 @stop

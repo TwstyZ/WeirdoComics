@@ -1,6 +1,6 @@
  
   <!-- Modal -->
-  @foreach ($selectBook as $consulta)
+  @foreach ($query as $consulta)
   
   <div class="modal fade" id="itemDelete{{$consulta->Id_item}}" tabindex="-1" aria-labelledby="itemDelete{{$consulta->Id_item}}" aria-hidden="true">
     <div class="modal-dialog">
