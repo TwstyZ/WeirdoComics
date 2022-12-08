@@ -7,6 +7,13 @@
                                 'success'
                             )</script>" !!}
 @endif
+@if (session()->has('confirmacion'))
+        {!! "<script>Swal.fire(
+                                'Success',
+                                'Email sent',
+                                'success'
+                            )</script>" !!}
+@endif
 <div class="d-flex justify-content-center"><h1 class="mt-3" style="color: #033E8C">Order Index</h1></div>
 
 

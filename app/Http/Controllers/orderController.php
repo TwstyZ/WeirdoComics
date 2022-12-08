@@ -135,6 +135,6 @@ class orderController extends Controller
 
         Mail::to($email)->send(new sendEmail);
 
-        return view('home');
+        return redirect('order/index')->with("confirmacion","xxx");
     }
 }
