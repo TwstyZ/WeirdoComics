@@ -27,7 +27,9 @@ class itemSaleController extends Controller
      */
     public function create()
     {
-        $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')->get();
+        $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')
+        ->where('Amount', '>', '0')
+        ->get();
         $idSale = DB::table('sale')->select('Id_sale')->latest()->first();
         return view('itemSaleCreate')->with(compact('idSale', 'query'), 'first');
     }
