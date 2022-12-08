@@ -21,7 +21,7 @@ public function download($id)
     $pdf = PDF::loadView('pdfTicket',['select'=>$select]);
     // aqui busca la vista para transformarla en pdf
     // La vista puede ser usado con boostrap
-    return $pdf->download("ticket_Order.pdf");
+    return $pdf->download("ticket_Order".$id.".pdf");
 }
 public function download2($id)
 {
@@ -35,6 +35,6 @@ public function download2($id)
     $pdf = PDF::loadView('pdfTicket_Sale',['select'=>$select]);
     // aqui busca la vista para transformarla en pdf
     // La vista puede ser usado con boostrap
-    return $pdf->download("ticket_Sale.pdf");
+    return $pdf->download("ticket_Sale.".$id."pdf");
 }
 }
