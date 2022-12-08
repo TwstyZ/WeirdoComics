@@ -100,7 +100,7 @@
                             aria-labelledby="navbarDarkDropdownMenuLink">
 
                             <li><a class="dropdown-item" href="{{route('order.create')}}">Generate</a></li>
-                            <li><a class="dropdown-item" href="">Check</a></li>
+                            <li><a class="dropdown-item" href="{{route('order.index')}}">Check</a></li>
 
                         </ul>
                     </li>

@@ -16,7 +16,11 @@ class orderController extends Controller
      */
     public function index()
     {
-        //
+        $select=DB::table('order')
+        ->join('provider', 'provider.Id_provider', '=', 'order.Provider_id')
+        ->select('order.Id_order', 'order.created_at', 'provider.Name', 'provider.Email')
+        ->get();
+        return view('orderIndex',compact('select'));
     }
 
     /**

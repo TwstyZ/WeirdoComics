@@ -25,7 +25,7 @@ use App\Http\Controllers\itemOrderController;
 
 Route::get('/', function () {return view('home');});
 Route::get('main', function () {return view('home');})->name('home');
-Route::get('comic', function () {return view('orderCreate');});
+Route::get('comic', function () {return view('orderIndex');});
 
 
 //item
