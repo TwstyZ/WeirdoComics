@@ -16,10 +16,19 @@ class orderController extends Controller
      */
     public function index()
     {
-        $select=DB::table('order')
+        // $select=DB::table('order')
+        // ->join('provider', 'provider.Id_provider', '=', 'order.Provider_id')
+        // ->select('order.Id_order', 'order.created_at', 'provider.Name', 'provider.Email')
+        // ->get();
+        $select=DB::table('item_order')
+        ->join('order', 'order.Id_order', '=', 'item_order.Order_id')
         ->join('provider', 'provider.Id_provider', '=', 'order.Provider_id')
+        ->select(DB::raw('count(item_order.Order_id) as count'))
         ->select('order.Id_order', 'order.created_at', 'provider.Name', 'provider.Email')
+        ->groupBy('order.Id_order')
+        ->having(DB::raw('count(item_order.Order_id)'), '>', 0)
         ->get();
+
         return view('orderIndex',compact('select'));
     }
 
