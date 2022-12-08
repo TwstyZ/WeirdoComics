@@ -15,7 +15,7 @@
                         <select name="Id_provider" id="Id_provider" class="form-select" style="background-color: #e1eefe;" value={{ old('Id_provider') }}>
                             <option value="" disabled selected>Select your option</option>
                             @foreach ($query as $consulta)
-                            <option value={{$consulta->Id_provider}}>{{ $consulta->Name}}<span> | {{$consulta->Contact}}</span></option>
+                            <option value="{{$consulta->Id_provider}}">{{ $consulta->Name}}<span> | {{$consulta->Contact}}</span></option>
                             @endforeach
                         </select>
                         
