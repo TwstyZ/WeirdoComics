@@ -8,7 +8,7 @@
     
 <div class="d-flex justify-content-center" >
     <table class="table table-sm" style="width: 90%">
-        <thead style="background-color: #F28705; color:white">
+        <thead style="background-color: #416284; color:white">
           <tr>
             <th scope="col">#</th>
             <th scope="col">Provider</th>
@@ -27,7 +27,9 @@
                     <th>{{$consultar->Name}}</th>
                     <th>{{$consultar->created_at}}</th>
                     <th>{{$consultar->Email}}</th>
-
+                    <th><a href="" class="btn" style="color: white; background-color: #F28705">Details</a></th>
+                    <th><a href="" class="btn" style="color: white; background-color: #033E8C">Email</a></th>
+                    <th><a href="" class="btn" style="color: white; background-color: #D9043D">PDF</a></th>
                 </tr>
             @endforeach
 
