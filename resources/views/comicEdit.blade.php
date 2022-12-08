@@ -7,16 +7,16 @@
         Editar información del comic
     </h1>
     <div class="card text-center mb-5">
-        <div class="card-header">
+        <div class="card-header h-5">
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('comic.update',$consultaId->Id_item)}}">
+            <form method="POST" action="{{route('comic.update',$query->Id_item)}}">
                 @csrf
                 {!!method_field('PUT')!!}
                 <h5 class="mt-2">Name</h5>
                 <div class="form-group">
                     <input name="Name" class="form-control border-2" type="text" placeholder="Name" style="background-color: #e1eefe;" 
-                        value={{$consultaId->Name}}>
+                        value="{{$query->Name}}">
                     <p class='card-title fw-bold text-start' style="color:#D90404">
                         <u>
                             {{ $errors->first('Name') }}
@@ -27,7 +27,7 @@
                 <h5 class="mt-2">Edition</h5>
                 <div class="form-group">
                     <input name="Edition" class="form-control border-2" type="number" placeholder="Edition" style="background-color: #e1eefe;" 
-                        value={{$consultaId->Edition}}>
+                        value="{{$query->Edition}}">
                     <p class='card-title fw-bold text-start' style="color:#D90404">
                         <u>
                             {{ $errors->first('Edition') }}
@@ -36,10 +36,10 @@
                 </div>
 
 
-                    <h5 class="mt-2">Company</h5>
+                    <h5 class="mt-2">Brand</h5>
                     <div class="form-group">
-                        <input name="Brand" class="form-control border-2" type="text" placeholder="Company"
-                            style="background-color: #e1eefe;" value="{{ $consultaId->Brand }}">
+                        <input name="Brand" class="form-control border-2" type="text" placeholder="Brand"
+                            style="background-color: #e1eefe;" value="{{ $query->Brand }}">
                         <p class='card-title fw-bold text-start' style="color:#D90404">
                             <u>
                                 {{ $errors->first('Brand') }}
@@ -50,7 +50,7 @@
                     <h5 class="mt-2">Amount</h5>
                     <div class="form-group">
                         <input name="Amount" class="form-control border-2" type="number" placeholder="Amount"
-                            style="background-color: #e1eefe;" value="{{ $consultaId->Amount }}">
+                            style="background-color: #e1eefe;" value="{{ $query->Amount }}">
                         <p class='card-title fw-bold text-start' style="color:#D90404">
                             <u>
                                 {{ $errors->first('Amount') }}
@@ -61,7 +61,7 @@
                     <h5 class="mt-2">Price Buy</h5>
                     <div class="form-group">
                         <input name="Price_buy" class="form-control border-2" type="number" placeholder="Price Buy"
-                            style="background-color: #e1eefe;" value="{{ $consultaId->Price_buy }}">
+                            style="background-color: #e1eefe;" value="{{ $query->Price_buy }}">
                         <p class='card-title fw-bold text-start' style="color:#D90404">
                             <u>
                                 {{ $errors->first('Price_buy') }}
@@ -73,7 +73,7 @@
                     <div class="form-group">
                         <input name="Admission_date" class="form-control border-2" type="date"
                             placeholder="Admission Date" style="background-color: #e1eefe;"
-                            value="{{ $consultaId->Admission_date }}">
+                            value={{ $query->Admission_date }}>
                         <p class='card-title fw-bold text-start' style="color:#D90404">
                             <u>
                                 {{ $errors->first('Admission_date') }}
@@ -84,7 +84,7 @@
                     <h5 class="mt-2">Image (Default Image Loaded)</h5>
                     <div class="form-group">
                         <input name="Image" class="form-control border-2" type="text" placeholder="Image"
-                            style="background-color: #e1eefe;" value="{{ $consultaId->Image }}">
+                            style="background-color: #e1eefe;" value="{{ $query->Image }}">
                         <p class='card-title fw-bold text-start' style="color:#D90404">
                             <u>
                                 {{ $errors->first('Image') }}
