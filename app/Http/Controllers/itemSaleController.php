@@ -43,8 +43,10 @@ class itemSaleController extends Controller
         $result = request('Item_id');
         $result_explode = explode('|', $result);
         $total= request('Amount') * $result_explode[1];
+
         $itemId = $result_explode[0];
         $idSale= request('Sale_id');
+
         DB::table('item_sale')->insert([
             "Amount"=>$request->input('Amount'),
             "Item_id"=>$itemId,
