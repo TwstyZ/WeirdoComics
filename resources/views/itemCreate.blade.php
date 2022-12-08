@@ -112,7 +112,7 @@
 
                     <div class="mt-4 mb-5">
                         <button type="submit" class="btn" style="background-color: #033E8C;color:white">Save</button>
-                        <a href="" class="btn" style="background-color: #D90404;color:white">Cancel</a>
+                        <a href="{{route('item.index')}}" class="btn" style="background-color: #D90404;color:white">Cancel</a>
                     </div>
             </div>
             </form>

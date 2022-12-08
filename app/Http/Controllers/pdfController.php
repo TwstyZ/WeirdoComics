@@ -16,6 +16,7 @@ public function download($id)
     ->join('item', 'item.Id_item', '=', 'item_order.Item_id')
     ->join('provider', 'provider.Id_provider', '=', 'order.Provider_id')
     ->select('order.Id_order', 'order.created_at', 'provider.Name', 'provider.Email', 'provider.Address', 'provider.Country', 'provider.Contact', 'provider.Cellphone', 'item_order.Amount', 'item_order.Total', 'item.Name', 'item.Type', 'item.Brand')
+    ->where('order.Id_order', '=', $id)
     ->get();
     $pdf = PDF::loadView('pdfTicket',['select'=>$select]);
     // aqui busca la vista para transformarla en pdf

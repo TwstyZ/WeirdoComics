@@ -19,6 +19,7 @@
     @php($total = 0)
     {{-- {{ $select[0]->Name_provider }}
     {{ print_r($select) }} --}}
+
     <section style="background-color: #eee;">
         <div class="py-5">
             <div class="container">
@@ -78,7 +79,6 @@
                                 <div class="mx px py" style="background-color: #f2f2f2;">
 
                                     @foreach ($select as $consulta)
-
                                         @php($total = $total + $consulta->Total)
 
                                         <div class="row">
