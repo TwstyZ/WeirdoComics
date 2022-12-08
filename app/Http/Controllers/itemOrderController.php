@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
 use Session;
+use App\Http\Requests\itemOrderRequest;
+
 
 class itemOrderController extends Controller
 {
@@ -28,8 +30,7 @@ class itemOrderController extends Controller
     {
         $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')->get();
         $idOrder = DB::table('order')->select('Id_order')->latest()->first();
-        return view('itemOrderCreate')->with(compact('idOrder', 'query'));
-
+        return view('itemOrderCreate')->with(compact('idOrder', 'query'), 'first');
     }
 
     /**
@@ -38,9 +39,23 @@ class itemOrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(itemOrderRequest $request)
     {
-        //
+        $result = request('Item_id');
+        $result_explode = explode('|', $result);
+        $total= request('Amount') * $result_explode[1];
+        $itemId = $result_explode[0];
+        $idOrder= request('Order_id');
+        DB::table('item_order')->insert([
+            "Amount"=>$request->input('Amount'),
+            "Item_id"=>$itemId,
+            "Total"=>$total,
+            "Order_id"=>$request->input('Order_id'),
+            "created_at"=>Carbon::now(),
+            "updated_at"=>Carbon::now()
+        ]);
+        $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')->get();
+        return view('itemOrderCreate')->with(compact('idOrder', 'query'));
     }
 
     /**
