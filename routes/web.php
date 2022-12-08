@@ -9,6 +9,7 @@ use App\Http\Controllers\providerController;
 use App\Http\Controllers\saleController;
 use App\Http\Controllers\sellerController;
 use App\Http\Controllers\itemOrderController;
+use App\Http\Controllers\itemSaleController;
 use App\Http\Controllers\pdfController;
 
 
@@ -134,3 +135,8 @@ Route::get('itemOrder/create', [itemOrderController::class,'create'])->name('ite
 //Store
 Route::post('itemOrder/store', [itemOrderController::class,'store'])->name('itemOrder.store');
 
+//itemSale
+//Create
+Route::get('itemSale/create', [itemSaleController::class,'create'])->name('itemSale.create');
+//Store
+Route::post('itemSale/store', [itemSaleController::class,'store'])->name('itemSale.store');

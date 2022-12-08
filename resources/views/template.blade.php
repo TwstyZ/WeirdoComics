@@ -55,13 +55,13 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sell Order
+                            Sale
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#416284"
                             aria-labelledby="navbarDarkDropdownMenuLink">
 
-                            <li><a class="dropdown-item" href="{{route('comic.index')}}">Generate</a></li>
-                            <li><a class="dropdown-item" href="{{route('comic.create')}}">Check</a></li>
+                            <li><a class="dropdown-item" href="{{route('sale.create')}}">Generate</a></li>
+                            <li><a class="dropdown-item" href="{{route('sale.index')}}">Check</a></li>
 
                         </ul>
                     </li>
@@ -94,7 +94,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Buy Order
+                            Purchase
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#416284"
                             aria-labelledby="navbarDarkDropdownMenuLink">

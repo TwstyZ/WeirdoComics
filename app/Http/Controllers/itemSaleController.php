@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\saleRequest;
 use DB;
 use Carbon\Carbon;
+use Session;
+use App\Http\Requests\itemSaleRequest;
 
-class saleController extends Controller
+class itemSaleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,16 +17,7 @@ class saleController extends Controller
      */
     public function index()
     {
-        $select=DB::table('item_sale')
-        ->join('sale', 'sale.Id_sale', '=', 'item_sale.Sale_id')
-        ->join('seller', 'seller.Id_seller', '=', 'sale.Seller_id')
-        ->select(DB::raw('count(item_sale.Sale_id) as count'))
-        ->select('sale.Id_sale', 'sale.created_at', 'seller.Name', 'seller.Email')
-        ->groupBy('sale.Id_sale')
-        ->having(DB::raw('count(item_sale.Sale_id)'), '>', 0)
-        ->get();
-
-        return view('saleIndex',compact('select'));
+        //
     }
 
     /**
@@ -35,8 +27,9 @@ class saleController extends Controller
      */
     public function create()
     {
-        $query = DB::table('seller')->select('Id_seller', 'Name')->get();
-        return view('saleCreate', compact('query'));
+        $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')->get();
+        $idSale = DB::table('sale')->select('Id_sale')->latest()->first();
+        return view('itemSaleCreate')->with(compact('idSale', 'query'), 'first');
     }
 
     /**
@@ -45,14 +38,23 @@ class saleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(saleRequest $request)
+    public function store(itemSaleRequest $request)
     {
-        DB::table('sale')->insert([
-            "Seller_id"=>$request->input('Id_seller'),
+        $result = request('Item_id');
+        $result_explode = explode('|', $result);
+        $total= request('Amount') * $result_explode[1];
+        $itemId = $result_explode[0];
+        $idSale= request('Sale_id');
+        DB::table('item_sale')->insert([
+            "Amount"=>$request->input('Amount'),
+            "Item_id"=>$itemId,
+            "Total"=>$total,
+            "Sale_id"=>$request->input('Sale_id'),
             "created_at"=>Carbon::now(),
             "updated_at"=>Carbon::now()
         ]);
-        return redirect('itemSale/create');
+        $query = DB::table('item')->select('Id_item', 'Name', 'Type', 'Price_sell', 'Amount')->get();
+        return view('itemSaleCreate')->with(compact('idSale', 'query'));
     }
 
     /**
@@ -63,15 +65,7 @@ class saleController extends Controller
      */
     public function show($id)
     {
-        $select=DB::table('item_sale')
-        ->join('sale', 'sale.Id_sale', '=', 'item_sale.Sale_id')
-        ->join('item', 'item.Id_item', '=', 'item_sale.Item_id')
-        ->join('seller', 'seller.Id_seller', '=', 'sale.Seller_id')
-        ->select('sale.Id_sale', 'sale.created_at', 'seller.Name as Name_seller', 'item_sale.Amount', 'item_sale.Total', 'item.Name as Name_item', 'item.Type', 'item.Brand')
-        ->where('sale.Id_sale', '=', $id)
-        ->get();
-
-        return view('itemSaleIndex',compact('select'));
+        //
     }
 
     /**
@@ -92,7 +86,7 @@ class saleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(itemSaleRequest $request, $id)
     {
         //
     }
