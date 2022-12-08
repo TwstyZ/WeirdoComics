@@ -21,8 +21,8 @@ return new class extends Migration
             $table->text('Description')->nullable();
             $table->string('Brand');
             $table->integer('Amount');
-            $table->double('Price_buy', 8, 4);
-            $table->double('Price_sell', 8, 4)->nullable();
+            $table->double('Price_buy', 20, 4);
+            $table->double('Price_sell', 20, 4)->nullable();
             $table->dateTime('Admission_date');
             $table->string('Image',500)->default('https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2017/png/iconmonstr-book-28.png&r=0&g=0&b=0');
             $table->timestamps();

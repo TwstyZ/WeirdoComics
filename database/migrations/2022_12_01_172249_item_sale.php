@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('Item_sale', function (Blueprint $table) {
             $table->increments('Id_item_sale');
             $table->integer('Amount');
-            $table->double('Total', 8, 4);
+            $table->double('Total', 20, 4);
             $table->timestamps();
             $table->unsignedInteger('Sale_id');
             $table->foreign('Sale_id')->references('Id_sale')->on('Sale')->onDelete('cascade');

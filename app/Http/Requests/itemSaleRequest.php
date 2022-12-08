@@ -25,7 +25,9 @@ class itemSaleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'Item_id'=>'required',
+            'Amount'=>'required|integer',
+            
         ];
     }
 }
